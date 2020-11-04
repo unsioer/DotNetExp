@@ -13,11 +13,17 @@
     <form name="myFORM" method="post" action="CreateTeacher.aspx" runat="server">
         <table border="1">
             <tr>
+                <td>学工号</td>
+                <td>
+                    <input name="no" type="text" id="no" required="required""/>
+                    <b style="color: red">*</b>
+                </td>
+            </tr>
+            <tr>
                 <td>用户名</td>
                 <td>
-                    <asp:TextBox ID="username" runat="server"></asp:TextBox>
-                    <b style="color: red">*</b>
-                    <!--input name="username" type="text" id="username" size="20"/-->
+                    <input name="username" type="text" id="username" required="required"/>
+                    <b style="color: red">*</b>               
                 </td>
             </tr>
             <tr>
@@ -35,30 +41,10 @@
                 </td>
             </tr>
             <tr>
-                <td>性别：</td>
-                <td>
-                    <input name="gender" type="radio" value="男" />男 
-                    <input type="radio" name="gender" value="女" />女
-                </td>
-            </tr>
-            <tr>
-                <td>电话：</td>
-                <td>
-                    <input name="phone" cols="25" id="phone" />
-
-                </td>
-            </tr>
-            <tr>
                 <td>邮箱：</td>
                 <td>
                     <input name="email" cols="25" id="email" />
 
-                </td>
-            </tr>
-            <tr>
-                <td>地址：</td>
-                <td>
-                    <textarea name="address" cols="25" id="address"></textarea>
                 </td>
             </tr>
             <tr>

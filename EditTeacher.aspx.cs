@@ -14,52 +14,6 @@ namespace dotnetExp
 {
     public partial class EditTeacher : System.Web.UI.Page
     {
-        protected bool UpdateTeacherInfoToFile(object sender)
-        {
-            FileStream filestream = File.OpenRead(Common.path);
-            StreamReader read = new StreamReader(filestream, Encoding.UTF8);
-            List<String[]> teacherList = new List<string[]>();
-            string strReadline;
-
-            while ((strReadline = read.ReadLine()) != null)
-            {
-                String[] teacherRow = strReadline.Split(',');
-                if (teacherRow[0] == Request["username"])
-                {
-                    teacherRow[1] = Request["password"].ToString();
-                }
-                teacherList.Add(teacherRow);
-            }
-            filestream.Close();
-            filestream = File.Create(Common.path);
-            StreamWriter write = new StreamWriter(filestream, Encoding.UTF8);
-            foreach (string[] teacherRow in teacherList)
-            {
-                write.WriteLine(teacherRow[0] + ',' + teacherRow[1]);
-            }
-            write.Close();
-            filestream.Close();
-            return true;
-        }
-        protected bool LoadTeacherInfoFromFile(object sender)
-        {
-            FileStream filestream = File.OpenRead(Common.path);
-            StreamReader read = new StreamReader(filestream, Encoding.UTF8);
-            string strReadline;
-
-            while ((strReadline = read.ReadLine()) != null)
-            {
-                String[] teacherRow = strReadline.Split(',');
-                if (teacherRow[0] == Request["username"])
-                {
-                    Session["username"] = teacherRow[0];
-                    Session["password"] = teacherRow[1];
-                    break;
-                }
-            }
-            filestream.Close();
-            return true;
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -81,14 +35,12 @@ namespace dotnetExp
                     }*/
 
                     SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServerConnection"].ToString());
+                    String no = Request["no"];
                     String password = Request["password"];
-                    String gender = Request["gender"];
-                    String phone = Request["phone"];
                     String email = Request["email"];
-                    String address = Request["address"];
                     List<String[]> teacherList = new List<string[]>();
 
-                    string sql = "UPDATE dotnetexp.dbo.teacher SET password='" + password + "',gender='"+gender+ "',phone='"+phone+ "',email='"+email+"',address='"+address+"' WHERE id="+Request["id"]+";";
+                    string sql = "UPDATE dotnetexp.dbo.teacher SET password='" + password + "',email='"+email +"' WHERE is_deleted IS NULL AND id="+Request["id"]+";";
                     if (connection.State == ConnectionState.Closed)
                     {
                         connection.Open();
@@ -149,17 +101,15 @@ namespace dotnetExp
             else if (Request["Request_Method"] == "GET" && Request["id"] != null)
             {
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServerConnection"].ToString());
-                string sql = "SELECT id,username,password,gender,phone,email,address FROM dotnetexp.dbo.teacher WHERE id=" + Request["id"];
+                string sql = "SELECT no,username,password,email FROM dotnetexp.dbo.teacher WHERE is_deleted IS NULL AND id=" + Request["id"];
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 DataSet dataSet = new DataSet();
                 adapter.Fill(dataSet, "teacher");
                 Session["id"] = Request["id"];
+                Session["no"]= dataSet.Tables[0].Rows[0].ItemArray[0].ToString();
                 Session["username"] = dataSet.Tables[0].Rows[0].ItemArray[1].ToString();
                 Session["password"] = dataSet.Tables[0].Rows[0].ItemArray[2].ToString();
-                Session["gender"] = dataSet.Tables[0].Rows[0].ItemArray[3].ToString();
-                Session["phone"] = dataSet.Tables[0].Rows[0].ItemArray[4].ToString();
-                Session["email"] = dataSet.Tables[0].Rows[0].ItemArray[5].ToString();
-                Session["address"] = dataSet.Tables[0].Rows[0].ItemArray[6].ToString();
+                Session["email"] = dataSet.Tables[0].Rows[0].ItemArray[3].ToString();
             }
             
         }

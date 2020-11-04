@@ -50,12 +50,10 @@
                     <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
                     <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
                     <Columns>
-                        <asp:BoundField DataField="username" HeaderText="用户名" />
+                        <asp:BoundField DataField="no" HeaderText="学工号" />
+                        <asp:BoundField DataField="username" HeaderText="姓名" />
                         <asp:BoundField DataField="password" HeaderText="密码" ItemStyle-CssClass="text-center"/>
-                        <asp:BoundField DataField="gender" HeaderText="性别" ItemStyle-CssClass="text-center"/>
-                        <asp:BoundField DataField="phone" HeaderText="电话" ItemStyle-CssClass="text-center"/>
                         <asp:BoundField DataField="email" HeaderText="邮箱" ItemStyle-CssClass="text-center"/>
-                        <asp:BoundField DataField="address" HeaderText="地址" ItemStyle-CssClass="text-center"/>
                     </Columns>
                     <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
                     <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -86,13 +84,10 @@
                 <table class="table table-hover table-striped">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>用户名</th>
+                            <th>学工号</th>
+                            <th>姓名</th>
                             <th>密码</th>
-                            <th>性别</th>
-                            <th>电话</th>
                             <th>邮箱</th>
-                            <th>地址</th>
                             <th>操作</th>
                         </tr>
                     </thead>
@@ -109,7 +104,7 @@
                                         //if (teacherRow.Length == 2)
                                         {
                                             Response.Write("<tr>");
-                                            for(int j=0;j<teacherRow.Length;j++)
+                                            for(int j=1;j<teacherRow.Length;j++)
                                                 Response.Write(" <td>" + teacherRow[j] + "</td>");
                                             Response.Write(" <td><a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "'>编辑</> " +
                                                 "<a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "&delete=1'>删除</>"+"</td>");

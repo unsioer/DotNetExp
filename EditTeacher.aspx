@@ -20,6 +20,14 @@
     %>
     <table border="1">
         <tr>
+            <td>学工号</td>
+            <td>
+                <%   
+                    Response.Write((string)Session["no"]);
+                %>
+            </td>
+        </tr>
+        <tr>
             <td>用户名</td>
             <td>
                 <%   
@@ -36,44 +44,12 @@
             </td>
         </tr>
         <tr>
-
-            <tr>
-                <td>性别：</td>
-                <td>
-                    <%
-                        if((string)Session["gender"]=="男")
-                        {
-                            Response.Write("<input name='gender' type='radio' value='男' checked />男<input type='radio' name='gender' value='女'/>女");
-                        }
-                        else
-                        {
-                            Response.Write("<input name='gender' type='radio' value='男' />男<input type='radio' name='gender' value='女' checked/>女");
-                        }
-                    %>
-                </td>
-            </tr>
-            <tr>
-                <td>电话：</td>
-                <td>
-                    <%   
-                    Response.Write("<input name='phone' type='phone' id='phone' size='20' value='" + (string)Session["phone"] + "'/>");
-                    %>  
-                </td>
-            </tr>
             <tr>
                 <td>邮箱：</td>
                 <td>
                     <%   
-                    Response.Write("<input name='email' type='email' id='email' size='20' value='" + (string)Session["email"] + "'/>");
+                        Response.Write("<input name='email' type='email' id='email' size='20' value='" + (string)Session["email"] + "'/>");
                     %>  
-                </td>
-            </tr>
-            <tr>
-                <td>地址：</td>
-                <td>
-                    <%   
-                    Response.Write("<input name='address' type='address' id='address' size='20' value='" + (string)Session["address"] + "'/>");
-                    %> 
                 </td>
             </tr>
             <tr>

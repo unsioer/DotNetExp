@@ -13,13 +13,6 @@ namespace dotnetExp
 {
     public partial class CreateTeacher : System.Web.UI.Page
     {
-        protected bool CreateTeacherIntoFile(object sender)
-        {
-            String username = Request["username"];
-            String password = Request["password"];
-            File.AppendAllText(Common.path, username + ',' + password + '\n');
-            return true;
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request["Request_Method"] == "POST")
@@ -38,28 +31,24 @@ namespace dotnetExp
                 }
                 else
                 {
-                    //CreateTeacherIntoFile(sender);
-
                     SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServerConnection"].ToString());
-                    String username = Request["username"];
+                    String no = Request["no"];
 
-                    string sql = "select * from dotnetexp.dbo.teacher where username='" + username + "';";
+                    string sql = "select * from dotnetexp.dbo.teacher where no='" + no + "';";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                     DataSet dataSet = new DataSet();
                     adapter.Fill(dataSet, "teacher");
                     if (dataSet.Tables[0].Rows.Count > 0)
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "用户名已存在", "<script language='javascript'>alert('对不起，您输入的用户名已存在，请重新输入！')</script>");
+                        ClientScript.RegisterStartupScript(this.GetType(), "学工号已存在", "<script language='javascript'>alert('对不起，您输入的学工号已存在，请重新输入！')</script>");
                         return;
                     }
+                    String username = Request["username"];
                     String password = Request["password"];
-                    String gender = Request["gender"];
-                    String phone = Request["phone"];
                     String email = Request["email"];
-                    String address = Request["address"];
                     List<String[]> teacherList = new List<string[]>();
 
-                    sql = "INSERT INTO dotnetexp.dbo.teacher(username, password, gender, phone, email, address) VALUES('" + username + "','" + password + "','" + gender + "','" + phone + "','" + email + "','" + address + "');";
+                    sql = "INSERT INTO dotnetexp.dbo.teacher(no, username, password, email) VALUES('" + no + "','" + username + "','" + password + "','" + email + "');";
                     if (connection.State == ConnectionState.Closed)
                     {
                         connection.Open();

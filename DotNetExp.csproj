@@ -111,7 +111,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DeleteTeacher.aspx" />
     <Content Include="EditTeacher.aspx" />
     <Content Include="index.aspx" />
     <Content Include="Web.config" />
@@ -119,14 +118,6 @@
     <Content Include="AccountAdmin.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common.cs" />
-    <Compile Include="DeleteTeacher.aspx.cs">
-      <DependentUpon>DeleteTeacher.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DeleteTeacher.aspx.designer.cs">
-      <DependentUpon>DeleteTeacher.aspx</DependentUpon>
-    </Compile>
     <Compile Include="EditTeacher.aspx.cs">
       <DependentUpon>EditTeacher.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
