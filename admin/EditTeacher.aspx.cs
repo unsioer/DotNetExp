@@ -21,26 +21,24 @@ namespace dotnetExp
             {
                 if (Request["id"] != null)
                 {
-
-                    /*if (Request["password"] != null && Request["contentChanged"] != null && Request["contentChanged"].Equals("true"))
-                    {
-                        UpdateTeacherInfoToFile(sender);
-                        Session["contentChanged"] = false;
-                        Response.Redirect("AccountAdmin.aspx");
-                    }
-                    else
-                    {
-                        LoadTeacherInfoFromFile(sender);
-                        return;
-                    }*/
-
                     SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServerConnection"].ToString());
                     String no = Request["no"];
+                    String username = Request["username"];
                     String password = Request["password"];
                     String email = Request["email"];
-                    List<String[]> teacherList = new List<string[]>();
 
-                    string sql = "UPDATE dotnetexp.dbo.teacher SET password='" + password + "',email='"+email +"' WHERE is_deleted IS NULL AND id="+Request["id"]+";";
+                    string sql = "SELECT * FROM dotnetexp.dbo.teacher WHERE no=" + no + " AND id!=" + Request["id"] + ";";
+                    SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                    DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet, "teacher");
+                    if (dataSet.Tables[0].Rows.Count > 0)
+                    {
+                        ClientScript.RegisterStartupScript(this.GetType(), "学工号已存在", "<script language='javascript'>alert('对不起，您修改的学工号已存在，请重新输入！')</script>");
+                        return;
+                    }
+
+
+                    sql = "UPDATE dotnetexp.dbo.teacher SET no=" + no + ", password='" + password + "',email='" + email + "' WHERE is_deleted=0 AND id=" + Request["id"] + ";";
                     if (connection.State == ConnectionState.Closed)
                     {
                         connection.Open();
@@ -101,17 +99,17 @@ namespace dotnetExp
             else if (Request["Request_Method"] == "GET" && Request["id"] != null)
             {
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServerConnection"].ToString());
-                string sql = "SELECT no,username,password,email FROM dotnetexp.dbo.teacher WHERE is_deleted IS NULL AND id=" + Request["id"];
+                string sql = "SELECT no,username,password,email FROM dotnetexp.dbo.teacher WHERE is_deleted=0 AND id=" + Request["id"];
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 DataSet dataSet = new DataSet();
                 adapter.Fill(dataSet, "teacher");
                 Session["id"] = Request["id"];
-                Session["no"]= dataSet.Tables[0].Rows[0].ItemArray[0].ToString();
+                Session["no"] = dataSet.Tables[0].Rows[0].ItemArray[0].ToString();
                 Session["username"] = dataSet.Tables[0].Rows[0].ItemArray[1].ToString();
                 Session["password"] = dataSet.Tables[0].Rows[0].ItemArray[2].ToString();
                 Session["email"] = dataSet.Tables[0].Rows[0].ItemArray[3].ToString();
             }
-            
+
         }
     }
 }

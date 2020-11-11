@@ -15,7 +15,7 @@
             <tr>
                 <td>学工号</td>
                 <td>
-                    <input name="no" type="text" id="no" required="required""/>
+                    <input name="no" type="text" id="no" required="required"/>
                     <b style="color: red">*</b>
                 </td>
             </tr>

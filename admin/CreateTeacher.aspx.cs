@@ -34,7 +34,7 @@ namespace dotnetExp
                     SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServerConnection"].ToString());
                     String no = Request["no"];
 
-                    string sql = "select * from dotnetexp.dbo.teacher where no='" + no + "';";
+                    string sql = "select * from dotnetexp.dbo.teacher where no=" + no + ";";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                     DataSet dataSet = new DataSet();
                     adapter.Fill(dataSet, "teacher");
@@ -48,7 +48,7 @@ namespace dotnetExp
                     String email = Request["email"];
                     List<String[]> teacherList = new List<string[]>();
 
-                    sql = "INSERT INTO dotnetexp.dbo.teacher(no, username, password, email) VALUES('" + no + "','" + username + "','" + password + "','" + email + "');";
+                    sql = "INSERT INTO dotnetexp.dbo.teacher(no, username, password, email, is_deleted, is_activated) VALUES('" + no + "','" + username + "','" + password + "','" + email + "', 0 , 0);";
                     if (connection.State == ConnectionState.Closed)
                     {
                         connection.Open();

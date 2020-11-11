@@ -29,10 +29,10 @@
             </div>
             <nav id="bs-navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li id="index"><a href="/AccountAdmin.aspx">管理</a></li>
+                    <li id="index"><a href="AccountAdmin.aspx">管理</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/Login.aspx" target="_blank">登录</a></li>
+                    <li><a href="/login.aspx" target="_blank">登录</a></li>
                 </ul>
             </nav>
         </div>
@@ -138,8 +138,5 @@
             <p class='text-center'><b>HaiyunLab</b> 2020 © 保留所有权利。</p>
         </div>
     </footer>
-
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

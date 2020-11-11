@@ -23,15 +23,15 @@
             <td>学工号</td>
             <td>
                 <%   
-                    Response.Write((string)Session["no"]);
+                    Response.Write("<input name='no' type='no' id='no' size='20' value='" + (string)Session["no"] + "' required/>");       
                 %>
             </td>
         </tr>
         <tr>
             <td>用户名</td>
             <td>
-                <%   
-                    Response.Write((string)Session["username"]);
+                <%
+                    Response.Write("<input name='username' type='username' id='username' size='20' value='" + (string)Session["username"] + "' required/>");
                 %>
             </td>
         </tr>
@@ -39,7 +39,7 @@
             <td>密码</td>
             <td>
                 <%   
-                    Response.Write("<input name='password' type='password' id='password' size='20' value='" + (string)Session["password"] + "' required onchange='processChange()'/>");
+                    Response.Write("<input name='password' type='password' id='password' size='20' value='" + (string)Session["password"] + "' required/>");
                 %>                    
             </td>
         </tr>
