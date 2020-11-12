@@ -113,9 +113,14 @@
   <ItemGroup>
     <Content Include="admin\EditTeacher.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="logout.aspx" />
+    <Content Include="student\Seminar.aspx" />
+    <Content Include="teacher\dashboard.aspx" />
+    <Content Include="upload.aspx" />
     <Content Include="Web.config" />
     <Content Include="admin\CreateTeacher.aspx" />
     <Content Include="admin\AccountAdmin.aspx" />
+    <Content Include="Seminar.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\EditTeacher.aspx.cs">
@@ -132,6 +137,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="admin\CreateTeacher.aspx.cs">
       <DependentUpon>CreateTeacher.aspx</DependentUpon>
@@ -146,6 +158,27 @@
     </Compile>
     <Compile Include="admin\AccountAdmin.aspx.designer.cs">
       <DependentUpon>AccountAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\Seminar.aspx.cs">
+      <DependentUpon>Seminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\Seminar.aspx.designer.cs">
+      <DependentUpon>Seminar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teacher\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="upload.aspx.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="upload.aspx.designer.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

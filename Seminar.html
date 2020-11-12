@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <input type="file" id="avatar" name="avatar">
+        </div>
+        <button type="button">保存</button>
+    </div>
+
+    <script type="text/javascript">
+        $('button').click(function () {
+            alert("提交！");
+            var files = $('#avatar').prop('files');
+            var data = new FormData();
+            data.append('avatar', files[0]);
+            $.ajax({
+                url: './upload.aspx',
+                type: 'POST',
+                data: data,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    var msg = JSON.parse(data);
+                    console.log(msg);
+                },
+                error: function (err) {
+                    var msg = JSON.parse(data);
+                    console.error(msg);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

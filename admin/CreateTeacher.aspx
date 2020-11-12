@@ -3,41 +3,41 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>创建教师用户</title>
+    <title>创建用户</title>
 </head>
+
 <body>
-    <p><b>管理员界面——创建教师用户</b></p>
+    <p><b>管理员界面——创建用户</b></p>
     <a href="AccountAdmin.aspx">返回管理页</a>
     <form name="myFORM" method="post" action="CreateTeacher.aspx" runat="server">
         <table border="1">
             <tr>
                 <td>学工号</td>
                 <td>
-                    <input name="no" type="text" id="no" required="required"/>
+                    <input name="username" type="text" id="username" required="required" />
                     <b style="color: red">*</b>
                 </td>
             </tr>
             <tr>
-                <td>用户名</td>
+                <td>姓名</td>
                 <td>
-                    <input name="username" type="text" id="username" required="required"/>
-                    <b style="color: red">*</b>               
-                </td>
-            </tr>
-            <tr>
-                <td>密码</td>
-                <td>
-                    <input name="password" type="password" id="password" required="required" />
+                    <input name="fullname" type="text" id="fullname" required="required" />
                     <b style="color: red">*</b>
                 </td>
             </tr>
             <tr>
-                <td>确认密码：</td>
+                <td>密码（为空则为默认密码）</td>
                 <td>
-                    <input name="password2" type="password" id="password2" required="required" />
-                    <b style="color: red">*</b>
+                    <input name="password" type="password" id="password" />
+                </td>
+            </tr>
+            <tr>
+                <td>确认密码（为空则为默认密码）</td>
+                <td>
+                    <input name="password2" type="password" id="password2" />
                 </td>
             </tr>
             <tr>
@@ -49,7 +49,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" name="Submit" value="提交" />&nbsp; &nbsp; 
+                    <input type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
                     <input name="Reset" type="reset" id="Reset" value="取消" />
                 </td>
             </tr>
@@ -58,4 +58,5 @@
     </form>
 
 </body>
+
 </html>

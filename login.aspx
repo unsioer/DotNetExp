@@ -17,12 +17,20 @@
 <body>
     <div class="container">
         <h1 class="page-header"><b>登录</b></h1>
-        <form name="myFORM" method="post" action="CreateTeacher.aspx" runat="server">
+        <form name="myFORM" method="post" action="login.aspx" runat="server">
+            <div class="form-group">
+				<label for="type" class="col-sm-2 control-label">User Type</label>
+				<div class="col-sm-10">
+					<input type="radio" name="type" value="admin" checked="checked" />管理员
+                    <input type="radio" name="type" value="teacher" />教师
+                    <input type="radio" name="type" value="student" />学生
+				</div>
+			</div>
             <table border="1">
                 <tr>
-                    <td>学工号</td>
+                    <td>账号</td>
                     <td>
-                        <input name="no" type="text" id="no" required="required" />
+                        <input name="username" type="text" id="username" required="required" />
                         <b style="color: red">*</b>
                     </td>
                 </tr>
@@ -34,9 +42,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <input type="radio" name="type" value="admin" checked="checked"/>管理员
-                    <input type="radio" name="type" value="teacher" />教师
-                    <input type="radio" name="type" value="student" />学生
+                    
                 </tr>
                 <tr>
                     <td colspan="2" align="center">

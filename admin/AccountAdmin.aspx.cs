@@ -21,7 +21,7 @@ namespace dotnetExp
 
             List<String[]> teacherList = new List<string[]>();
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServerConnection"].ToString());
-            string sql = "SELECT id,no,username,password,email FROM dotnetexp.dbo.teacher WHERE is_deleted=0";
+            string sql = "SELECT id,username,fullname,password,email FROM dotnetexp.dbo.teacher WHERE is_deleted=0";
             SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
             DataSet dataSet = new DataSet();
             adapter.Fill(dataSet, "teacher");

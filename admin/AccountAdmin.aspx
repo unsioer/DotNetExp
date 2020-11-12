@@ -32,7 +32,7 @@
                     <li id="index"><a href="AccountAdmin.aspx">管理</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/login.aspx" target="_blank">登录</a></li>
+                    <li><a href="/logout.aspx">注销</a></li>
                 </ul>
             </nav>
         </div>
@@ -50,19 +50,20 @@
                     <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
                     <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
                     <Columns>
-                        <asp:BoundField DataField="no" HeaderText="学工号" />
-                        <asp:BoundField DataField="username" HeaderText="姓名" />
-                        <asp:BoundField DataField="password" HeaderText="密码" ItemStyle-CssClass="text-center"/>
-                        <asp:BoundField DataField="email" HeaderText="邮箱" ItemStyle-CssClass="text-center"/>
+                        <asp:BoundField DataField="username" HeaderText="学工号" ItemStyle-CssClass="text-center" />
+                        <asp:BoundField DataField="fullname" HeaderText="姓名" ItemStyle-CssClass="text-center" />
+                        <asp:BoundField DataField="password" HeaderText="密码" ItemStyle-CssClass="text-center" />
+                        <asp:BoundField DataField="email" HeaderText="邮箱" ItemStyle-CssClass="text-center" />
                     </Columns>
                     <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
                     <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
-                    <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7"  />
+                    <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
                     <AlternatingRowStyle BackColor="#F7F7F7" />
                 </asp:GridView>
             </form>
         </div>
         <div class="col-md-12">
+            <h2>教师账号</h2>
             <div class="col-md-12 row">
                 <div class="col-sm-4">
                     <a class="btn btn-info" href="AccountAdmin.aspx">刷新</a>
@@ -77,14 +78,14 @@
                     <select class="form-control" id="page" name="page"></select>
                 </div-->
                 <div class="col-sm-4">
-                    
                 </div>
             </div>
+
             <div class="col-md-12">
                 <table class="table table-hover table-striped">
                     <thead>
                         <tr>
-                            <th>学工号</th>
+                            <th>教工号</th>
                             <th>姓名</th>
                             <th>密码</th>
                             <th>邮箱</th>
@@ -104,10 +105,11 @@
                                         //if (teacherRow.Length == 2)
                                         {
                                             Response.Write("<tr>");
-                                            for(int j=1;j<teacherRow.Length;j++)
-                                                Response.Write(" <td>" + teacherRow[j] + "</td>");
-                                            Response.Write(" <td><a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "'>编辑</> " +
-                                                "<a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "&delete=1'>删除</>"+"</td>");
+                                            for (int j = 1; j < teacherRow.Length; j++)
+                                                Response.Write("<td>" + teacherRow[j] + "</td>");
+                                            Response.Write("<td><a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "'>编辑</> " +
+                                                "<a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "&reset=1'>重置密码</> "+
+                                                "<a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "&delete=1'>删除</>" + "</td>");
                                             Response.Write("</tr>");
                                             System.Console.Write(teacherRow[0]);
                                         }
@@ -132,6 +134,7 @@
                 </table>
             </div>
         </div>
+
     </div>
     <footer class="footer bs-docs-footer">
         <div class="container">

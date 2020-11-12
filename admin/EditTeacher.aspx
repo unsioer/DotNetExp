@@ -20,10 +20,10 @@
     %>
     <table border="1">
         <tr>
-            <td>学工号</td>
+            <td>教工号</td>
             <td>
                 <%   
-                    Response.Write("<input name='no' type='no' id='no' size='20' value='" + (string)Session["no"] + "' required/>");       
+                    Response.Write("<input name='username' type='username' id='username' size='20' value='" + (string)Session["username"] + "' required/>");       
                 %>
             </td>
         </tr>
@@ -31,7 +31,7 @@
             <td>用户名</td>
             <td>
                 <%
-                    Response.Write("<input name='username' type='username' id='username' size='20' value='" + (string)Session["username"] + "' required/>");
+                    Response.Write("<input name='fullname' type='fullname' id='fullname' size='20' value='" + (string)Session["fullname"] + "' required/>");
                 %>
             </td>
         </tr>
