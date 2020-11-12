@@ -1,11 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="dotnetExp.teacher.dashboard" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="dotnetExp.student.dashboard" %>
 <%
     if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)
     {
         Response.Redirect("/login.aspx");
     }
-    else if (!Session["cur_type"].Equals("teacher"))
+    else if (!Session["cur_type"].Equals("student"))
     {
         Response.Status = "404 Not Found";
         return;
@@ -16,8 +15,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>教师界面</title>
-    <script
+    <title>学生界面</title>
+        <script
         src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" />
@@ -35,7 +34,7 @@
                         class="icon-bar"></span><span class="icon-bar"></span><span
                             class="icon-bar"></span>
                 </button>
-                <a href="/main.aspx" class="navbar-brand">XMUTeacher</a>
+                <a href="/main.aspx" class="navbar-brand">XMUStudent</a>
             </div>
             <nav id="bs-navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">

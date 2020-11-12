@@ -12,6 +12,7 @@ namespace dotnetExp
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["cur_user"] = null;
+            Session["cur_id"] = null;
             Session["cur_type"] = null;
             Response.Write("<script>window.parent.location='/login.aspx'</script>");
         }

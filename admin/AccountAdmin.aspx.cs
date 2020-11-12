@@ -17,8 +17,6 @@ namespace dotnetExp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //List<String[]> teacherList = LoadTeacherInfoFromFile(sender);
-
             List<String[]> teacherList = new List<string[]>();
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServerConnection"].ToString());
             string sql = "SELECT id,username,fullname,password,email FROM dotnetexp.dbo.teacher WHERE is_deleted=0";

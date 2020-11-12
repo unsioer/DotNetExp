@@ -114,6 +114,7 @@
     <Content Include="admin\EditTeacher.aspx" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
+    <Content Include="student\dashboard.aspx" />
     <Content Include="student\Seminar.aspx" />
     <Content Include="teacher\dashboard.aspx" />
     <Content Include="upload.aspx" />
@@ -158,6 +159,13 @@
     </Compile>
     <Compile Include="admin\AccountAdmin.aspx.designer.cs">
       <DependentUpon>AccountAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\Seminar.aspx.cs">
       <DependentUpon>Seminar.aspx</DependentUpon>

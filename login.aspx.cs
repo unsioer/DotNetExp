@@ -33,7 +33,7 @@ namespace dotnetExp
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "密码为空", "<script language='javascript'>alert('对不起，您输入的密码为空，请重新输入！')</script>");
                 }
-                else if (Request["type"] != "admin" && Request["type"] != "teacher" && Request["type"] != "admin")
+                else if (Request["type"] != "admin" && Request["type"] != "teacher" && Request["type"] != "student")
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "用户类型错误", "<script language='javascript'>alert('对不起，您请求的用户类型有误！')</script>");
                 }
@@ -55,13 +55,14 @@ namespace dotnetExp
                     else
                     {
                         Session["cur_user"] = username;
+                        Session["cur_id"] = dataSet.Tables[0].Rows[0][0];
                         Session["cur_type"] = usertype;
                         if (usertype == "admin")
                             Response.Redirect("admin/AccountAdmin.aspx");
                         else if (usertype == "teacher")
                             Response.Redirect("teacher/dashboard.aspx");
                         else
-                            Response.Redirect("student/Seminar.aspx");
+                            Response.Redirect("student/dashboard.aspx");
 
                     }
 

@@ -1,5 +1,16 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AccountAdmin.aspx.cs" Inherits="dotnetExp.AccountAdmin" %>
 
+<%
+    if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)
+    {
+        Response.Redirect("/login.aspx");
+    }
+    else if (!Session["cur_type"].Equals("admin"))
+    {
+        Response.Status = "404 Not Found";
+        return;
+    }
+%>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -108,7 +119,7 @@
                                             for (int j = 1; j < teacherRow.Length; j++)
                                                 Response.Write("<td>" + teacherRow[j] + "</td>");
                                             Response.Write("<td><a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "'>编辑</> " +
-                                                "<a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "&reset=1'>重置密码</> "+
+                                                "<a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "&reset=1'>重置密码</> " +
                                                 "<a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "&delete=1'>删除</>" + "</td>");
                                             Response.Write("</tr>");
                                             System.Console.Write(teacherRow[0]);

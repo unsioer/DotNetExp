@@ -11,7 +11,7 @@ namespace dotnetExp.student
 {
 
 
-    public partial class Seminar
+    public partial class SeminarManage
     {
 
         /// <summary>

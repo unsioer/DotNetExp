@@ -1,5 +1,15 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Seminar.aspx.cs" Inherits="dotnetExp.student.Seminar" %>
-
+<%
+    if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)
+    {
+        Response.Redirect("/login.aspx");
+    }
+    else if (!Session["cur_type"].Equals("student"))
+    {
+        Response.Status = "404 Not Found";
+        return;
+    }
+%>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
