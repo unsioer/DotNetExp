@@ -10,9 +10,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace dotnetExp
+namespace DotNetExp
 {
-    public partial class EditTeacher : System.Web.UI.Page
+    public partial class editTeacher : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,7 +55,7 @@ namespace dotnetExp
                     }
 
                 }
-                Response.Redirect("AccountAdmin.aspx");
+                Response.Redirect("accountAdmin.aspx");
             }
             else if (Request["id"] != null & Request["delete"] == "1")
             {
@@ -94,7 +94,7 @@ namespace dotnetExp
                     //Fail
                 }
 
-                Response.Redirect("AccountAdmin.aspx");
+                Response.Redirect("accountAdmin.aspx");
             }
             else if (Request["id"] != null & Request["reset"] == "1")
             {
@@ -127,7 +127,7 @@ namespace dotnetExp
                     //Fail
                 }
 
-                Response.Redirect("AccountAdmin.aspx");
+                Response.Redirect("accountAdmin.aspx");
             }
 
             else if (Request["Request_Method"] == "GET" && Request["id"] != null)

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateTeacher.aspx.cs" Inherits="dotnetExp.CreateTeacher" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="createTeacher.aspx.cs" Inherits="DotNetExp.createTeacher" %>
 <%
     if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)
     {
@@ -22,8 +22,8 @@
 
 <body>
     <p><b>管理员界面——创建用户</b></p>
-    <a href="AccountAdmin.aspx">返回管理页</a>
-    <form name="myFORM" method="post" action="CreateTeacher.aspx" runat="server">
+    <a href="accountAdmin.aspx">返回管理页</a>
+    <form name="myFORM" method="post" action="createTeacher.aspx" runat="server">
         <table border="1">
             <tr>
                 <td>学工号</td>

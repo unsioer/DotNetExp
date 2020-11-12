@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace dotnetExp.student
+namespace DotNetExp.student
 {
     public partial class seminar : System.Web.UI.Page
     {

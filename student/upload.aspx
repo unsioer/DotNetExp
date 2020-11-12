@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="upload.aspx.cs" Inherits="dotnetExp.upload" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="upload.aspx.cs" Inherits="DotNetExp.upload" %>
 <%
     if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)
     {

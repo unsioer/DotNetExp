@@ -9,9 +9,9 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 
-namespace dotnetExp
+namespace DotNetExp
 {
-    public partial class CreateTeacher : System.Web.UI.Page
+    public partial class createTeacher : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -67,7 +67,7 @@ namespace dotnetExp
                     {
                         //Fail
                     }
-                    Response.Redirect("AccountAdmin.aspx");
+                    Response.Redirect("accountAdmin.aspx");
                 }
             }
 

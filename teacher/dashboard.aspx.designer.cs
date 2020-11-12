@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace dotnetExp.teacher
+namespace DotNetExp.teacher
 {
 
 

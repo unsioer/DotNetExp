@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace dotnetExp
+namespace DotNetExp
 {
     public partial class upload : System.Web.UI.Page
     {

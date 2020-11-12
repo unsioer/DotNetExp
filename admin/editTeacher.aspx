@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditTeacher.aspx.cs" Inherits="dotnetExp.EditTeacher" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="editTeacher.aspx.cs" Inherits="DotNetExp.editTeacher" %>
 <%
     if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)
     {
@@ -19,14 +19,14 @@
     <title></title>
 </head>
 <body>
-    <a href="AccountAdmin.aspx">返回</a>
+    <a href="accountAdmin.aspx">返回</a>
     <% if (Session["id"] == null)
         {
-            Response.Write("<form id='form1' method='post' runat='server' action='EditTeacher.aspx'>");
+            Response.Write("<form id='form1' method='post' runat='server' action='editTeacher.aspx'>");
         }
         else
         {
-            Response.Write("<form id='form1' method='post' runat='server' action='EditTeacher.aspx?id=" + (string)Session["id"] + "'>");
+            Response.Write("<form id='form1' method='post' runat='server' action='editTeacher.aspx?id=" + (string)Session["id"] + "'>");
         }
     %>
     <table border="1">

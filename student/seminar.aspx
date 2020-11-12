@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="seminar.aspx.cs" Inherits="dotnetExp.student.seminar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="seminar.aspx.cs" Inherits="DotNetExp.student.seminar" %>
 
 <%
     if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)

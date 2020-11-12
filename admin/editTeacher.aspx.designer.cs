@@ -7,11 +7,11 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace dotnetExp
+namespace DotNetExp
 {
 
 
-    public partial class EditTeacher
+    public partial class editTeacher
     {
     }
 }

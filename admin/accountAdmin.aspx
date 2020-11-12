@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AccountAdmin.aspx.cs" Inherits="dotnetExp.AccountAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="accountAdmin.aspx.cs" Inherits="DotNetExp.accountAdmin" %>
 
 <%
     if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)
@@ -40,7 +40,7 @@
             </div>
             <nav id="bs-navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li id="index"><a href="AccountAdmin.aspx">管理</a></li>
+                    <li id="index"><a href="accountAdmin.aspx">管理</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/logout.aspx">注销</a></li>
@@ -77,10 +77,10 @@
             <h2>教师账号</h2>
             <div class="col-md-12 row">
                 <div class="col-sm-4">
-                    <a class="btn btn-info" href="AccountAdmin.aspx">刷新</a>
+                    <a class="btn btn-info" href="accountAdmin.aspx">刷新</a>
                 </div>
                 <div class="col-sm-4">
-                    <a class="btn btn-success" href="CreateTeacher.aspx">新建</a>
+                    <a class="btn btn-success" href="createTeacher.aspx">新建</a>
                 </div>
                 <!--div class="col-sm-2">
                     <label for="page" class="control-label">页码</label>
@@ -118,9 +118,9 @@
                                             Response.Write("<tr>");
                                             for (int j = 1; j < teacherRow.Length; j++)
                                                 Response.Write("<td>" + teacherRow[j] + "</td>");
-                                            Response.Write("<td><a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "'>编辑</> " +
-                                                "<a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "&reset=1'>重置密码</> " +
-                                                "<a name='edit' type='button' href='EditTeacher.aspx?id=" + teacherRow[0] + "&delete=1'>删除</>" + "</td>");
+                                            Response.Write("<td><a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "'>编辑</> " +
+                                                "<a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "&reset=1'>重置密码</> " +
+                                                "<a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "&delete=1'>删除</>" + "</td>");
                                             Response.Write("</tr>");
                                             System.Console.Write(teacherRow[0]);
                                         }

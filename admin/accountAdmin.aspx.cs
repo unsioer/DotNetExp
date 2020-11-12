@@ -9,9 +9,9 @@ using System.Linq;
 using System.Text;
 
 
-namespace dotnetExp
+namespace DotNetExp
 {
-    public partial class AccountAdmin : System.Web.UI.Page
+    public partial class accountAdmin : System.Web.UI.Page
     {
         protected String userTableStr;
 

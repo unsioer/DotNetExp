@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace dotnetExp
+namespace DotNetExp
 {
     public partial class login : System.Web.UI.Page
     {
@@ -17,7 +17,7 @@ namespace dotnetExp
             if(Session["cur_type"]!=null)
             {
                 if (Session["cur_type"].Equals("admin"))
-                    Response.Redirect("admin/AccountAdmin.aspx");
+                    Response.Redirect("admin/accountAdmin.aspx");
                 else if (Session["cur_type"].Equals("teacher"))
                     Response.Redirect("teacher/dashboard.aspx");
                 else if (Session["cur_type"].Equals("student"))
@@ -58,7 +58,7 @@ namespace dotnetExp
                         Session["cur_id"] = dataSet.Tables[0].Rows[0][0];
                         Session["cur_type"] = usertype;
                         if (usertype == "admin")
-                            Response.Redirect("admin/AccountAdmin.aspx");
+                            Response.Redirect("admin/accountAdmin.aspx");
                         else if (usertype == "teacher")
                             Response.Redirect("teacher/dashboard.aspx");
                         else

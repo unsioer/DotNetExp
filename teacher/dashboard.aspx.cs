@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace dotnetExp.teacher
+namespace DotNetExp.teacher
 {
     public partial class dashboard : System.Web.UI.Page
     {
