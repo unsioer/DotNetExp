@@ -34,9 +34,12 @@
                         class="icon-bar"></span><span class="icon-bar"></span><span
                             class="icon-bar"></span>
                 </button>
-                <a href="/main.aspx" class="navbar-brand">XMUStudent</a>
+                <a href="dashboard.aspx" class="navbar-brand">XMUStudent</a>
             </div>
             <nav id="bs-navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="seminar.aspx">讨论课管理</a></li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/logout.aspx">注销</a></li>
                 </ul>

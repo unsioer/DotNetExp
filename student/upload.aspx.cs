@@ -17,9 +17,10 @@ namespace dotnetExp
                 {
                     HttpPostedFile file = Request.Files[0];
                     
-                    string filePath = Server.MapPath("./upload/" + file.FileName);
+                    string filePath = Server.MapPath("../upload/student/" + file.FileName);
                     file.SaveAs(filePath);
-                    Response.Write("{\"msg\":\"Success\"}");
+
+                    Response.Write("{\"msg\":\"Success\",\"data\":\""+file.FileName+"\"}");
                 }
                 catch
                 {

@@ -115,13 +115,12 @@
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
     <Content Include="student\dashboard.aspx" />
-    <Content Include="student\Seminar.aspx" />
+    <Content Include="student\seminar.aspx" />
     <Content Include="teacher\dashboard.aspx" />
-    <Content Include="upload.aspx" />
+    <Content Include="student\upload.aspx" />
     <Content Include="Web.config" />
     <Content Include="admin\CreateTeacher.aspx" />
     <Content Include="admin\AccountAdmin.aspx" />
-    <Content Include="Seminar.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\EditTeacher.aspx.cs">
@@ -167,12 +166,12 @@
     <Compile Include="student\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="student\Seminar.aspx.cs">
-      <DependentUpon>Seminar.aspx</DependentUpon>
+    <Compile Include="student\seminar.aspx.cs">
+      <DependentUpon>seminar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="student\Seminar.aspx.designer.cs">
-      <DependentUpon>Seminar.aspx</DependentUpon>
+    <Compile Include="student\seminar.aspx.designer.cs">
+      <DependentUpon>seminar.aspx</DependentUpon>
     </Compile>
     <Compile Include="teacher\dashboard.aspx.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
@@ -181,11 +180,11 @@
     <Compile Include="teacher\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="upload.aspx.cs">
+    <Compile Include="student\upload.aspx.cs">
       <DependentUpon>upload.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="upload.aspx.designer.cs">
+    <Compile Include="student\upload.aspx.designer.cs">
       <DependentUpon>upload.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
