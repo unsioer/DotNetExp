@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="createTeacher.aspx.cs" Inherits="DotNetExp.createTeacher" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="activateAccount.aspx.cs" Inherits="DotNetExp.activateAccount" %>
+
 <%
     if (Session["cur_id"] == null || Session["cur_type"] == null)
     {
         Response.Redirect("/login.aspx");
     }
-    else if (!Session["cur_type"].Equals("admin"))
+    else if ((!Session["cur_type"].Equals("student") && !Session["cur_type"].Equals("teacher")) || Session["cur_activate"] == null)
     {
         Response.Status = "404 Not Found";
         return;
@@ -17,12 +18,11 @@
 
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>创建用户</title>
+    <title>激活用户</title>
 </head>
 
 <body>
-    <p><b>管理员界面——创建用户</b></p>
-    <a href="accountAdmin.aspx">返回管理页</a>
+    <p><b>激活用户</b></p>
     <form name="myFORM" method="post" action="createTeacher.aspx" runat="server">
         <table border="1">
             <tr>
@@ -40,15 +40,15 @@
                 </td>
             </tr>
             <tr>
-                <td>密码（为空则为默认密码）</td>
+                <td>新密码</td>
                 <td>
-                    <input name="password" type="password" id="password" />
+                    <input name="password" type="password" id="password" required="required" />
                 </td>
             </tr>
             <tr>
-                <td>确认密码（为空则为默认密码）</td>
+                <td>确认密码</td>
                 <td>
-                    <input name="password2" type="password" id="password2" />
+                    <input name="password2" type="password" id="password2" required="required" />
                 </td>
             </tr>
             <tr>

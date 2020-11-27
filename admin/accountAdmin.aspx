@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="accountAdmin.aspx.cs" Inherits="DotNetExp.accountAdmin" %>
 
 <%
-    if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)
+    if (Session["cur_id"] == null || Session["cur_type"] == null)
     {
         Response.Redirect("/login.aspx");
     }
@@ -65,6 +65,7 @@
                         <asp:BoundField DataField="fullname" HeaderText="姓名" ItemStyle-CssClass="text-center" />
                         <asp:BoundField DataField="password" HeaderText="密码" ItemStyle-CssClass="text-center" />
                         <asp:BoundField DataField="email" HeaderText="邮箱" ItemStyle-CssClass="text-center" />
+                        <asp:BoundField DataField="is_activated" HeaderText="激活状态" ItemStyle-CssClass="text-center" />
                     </Columns>
                     <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
                     <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -100,6 +101,7 @@
                             <th>姓名</th>
                             <th>密码</th>
                             <th>邮箱</th>
+                            <th>激活状态</th>
                             <th>操作</th>
                         </tr>
                     </thead>
@@ -113,17 +115,15 @@
                                     try
                                     {
                                         string[] teacherRow = teacherList[i];
-                                        //if (teacherRow.Length == 2)
-                                        {
-                                            Response.Write("<tr>");
-                                            for (int j = 1; j < teacherRow.Length; j++)
-                                                Response.Write("<td>" + teacherRow[j] + "</td>");
-                                            Response.Write("<td><a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "'>编辑</> " +
-                                                "<a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "&reset=1'>重置密码</> " +
-                                                "<a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "&delete=1'>删除</>" + "</td>");
-                                            Response.Write("</tr>");
-                                            System.Console.Write(teacherRow[0]);
-                                        }
+
+                                        Response.Write("<tr>");
+                                        for (int j = 1; j < teacherRow.Length; j++)
+                                            Response.Write("<td>" + teacherRow[j] + "</td>");
+                                        Response.Write("<td><a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "'>编辑</> " +
+                                            "<a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "&reset=1'>重置密码</> " +
+                                            "<a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "&delete=1'>删除</>" + "</td>");
+                                        Response.Write("</tr>");
+                                        System.Console.Write(teacherRow[0]);
                                     }
                                     catch (Exception ex)
                                     {

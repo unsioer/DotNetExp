@@ -116,6 +116,9 @@
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
     <Content Include="student\dashboard.aspx" />
+    <Content Include="student\seminarAsk.aspx" />
+    <Content Include="student\seminarEnroll.aspx" />
+    <Content Include="student\seminarMaterialPage.aspx" />
     <Content Include="student\seminar.aspx" />
     <Content Include="teacher\dashboard.aspx" />
     <Content Include="student\upload.aspx" />
@@ -166,6 +169,27 @@
     </Compile>
     <Compile Include="student\dashboard.aspx.designer.cs">
       <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\seminarAsk.aspx.cs">
+      <DependentUpon>seminarAsk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\seminarAsk.aspx.designer.cs">
+      <DependentUpon>seminarAsk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\seminarEnroll.aspx.cs">
+      <DependentUpon>seminarEnroll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\seminarEnroll.aspx.designer.cs">
+      <DependentUpon>seminarEnroll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\seminarMaterialPage.aspx.cs">
+      <DependentUpon>seminarMaterialPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\seminarMaterialPage.aspx.designer.cs">
+      <DependentUpon>seminarMaterialPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="student\seminar.aspx.cs">
       <DependentUpon>seminar.aspx</DependentUpon>

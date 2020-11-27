@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="DotNetExp.teacher.dashboard" %>
 
 <%
-    if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)
+    if (Session["cur_id"] == null || Session["cur_type"] == null)
     {
         Response.Redirect("/login.aspx");
     }
@@ -9,6 +9,10 @@
     {
         Response.Status = "404 Not Found";
         return;
+    }
+    else if(Session["cur_activate"]!=null)
+    {
+        Response.Redirect("/activateAccount.aspx");
     }
 %>
 <!DOCTYPE html>

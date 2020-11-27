@@ -43,7 +43,12 @@ namespace DotNetExp
                     String username = Request["username"];
                     String password = Request["password"];
                     String usertype = Request["type"];
-                    string sql = "select * from dotnetexp.dbo." + usertype + " where username='" + username + "' and password='" + password + "' and is_deleted=0;";
+                    string sql = "select id";
+                    if(!usertype.Equals("admin"))
+                    {
+                        sql += ", is_activated";
+                    }
+                    sql+=" from dotnetexp.dbo." + usertype + " where username='" + username + "' and password='" + password + "' and is_deleted=0;";
                     SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                     DataSet dataSet = new DataSet();
                     adapter.Fill(dataSet, "user");
@@ -54,9 +59,10 @@ namespace DotNetExp
                     }
                     else
                     {
-                        Session["cur_user"] = username;
                         Session["cur_id"] = dataSet.Tables[0].Rows[0][0];
                         Session["cur_type"] = usertype;
+                        if(dataSet.Tables[0].Rows[0][1].ToString().Equals("0"))
+                            Session["cur_activate"] = "0";
                         if (usertype == "admin")
                             Response.Redirect("admin/accountAdmin.aspx");
                         else if (usertype == "teacher")

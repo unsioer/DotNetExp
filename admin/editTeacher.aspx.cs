@@ -111,7 +111,7 @@ namespace DotNetExp
                     return;
                 }
 
-                sql = "UPDATE dotnetexp.dbo.teacher SET password='123456' WHERE id=" + Request["id"];
+                sql = "UPDATE dotnetexp.dbo.teacher SET password='123456', is_activated=0 WHERE id=" + Request["id"];
                 if (connection.State == ConnectionState.Closed)
                 {
                     connection.Open();

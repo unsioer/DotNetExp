@@ -1,15 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="seminar.aspx.cs" Inherits="DotNetExp.student.seminar" %>
 
 <%
-    if (Session["cur_user"] == null || Session["cur_id"] == null || Session["cur_type"] == null)
-    {
-        Response.Redirect("/login.aspx");
-    }
-    else if (!Session["cur_type"].Equals("student"))
-    {
-        Response.Status = "404 Not Found";
-        return;
-    }
+
 %>
 <!DOCTYPE html>
 
@@ -45,36 +37,73 @@
                 <li><a href="/logout.aspx">注销</a></li>
             </ul>
         </nav>
-        <div>
-            <input type="file" id="avatar" name="avatar">
+        <div class="container">
+            <h1>讨论课列表</h1>
+            <div class="col-md-12 row">
+                <div class="col-sm-4">
+                    <a class="btn btn-info" href="seminar.aspx">刷新</a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>课程</th>
+                            <th>日期</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            List<string[]> seminarList = (List<string[]>)Session["seminarList"];
+                            if (seminarList != null)
+                            {
+                                for (int i = 0; i < seminarList.Count; i++)
+                                {
+                                    try
+                                    {
+                                        string[] seminarRow = seminarList[i];
+                                        Response.Write("<tr>");
+                                        for (int j = 1; j < seminarRow.Length-1; j++)
+                                            Response.Write("<td>" + seminarRow[j] + "</td>");
+                                        if(seminarRow[seminarRow.Length-1].Equals("0"))
+                                        {
+                                            Response.Write("<td><a name='edit' type='button' href='seminarEnroll.aspx?id=" + seminarRow[0] + "'>报名</> ");
+                                        }
+                                        else
+                                        {
+                                            Response.Write("<td><a name='edit' type='button' href='seminarEnroll.aspx?id=" + seminarRow[0] + "&cancel=1'>取消报名</> " +
+                                            "<a name='edit' type='button' href='seminarMaterialPage.aspx?id=" + seminarRow[0] + "'>上传材料</> "+
+                                            "<a name='edit' type='button' href='seminarAsk.aspx?id=" + seminarRow[0] + "'>提问</> "+
+                                            "<a name='edit' type='button' href='seminarMaterialPage.aspx?id=" + seminarRow[0] + "'>上传报告</> ");
+                                        }
+                                        Response.Write("</tr>");
+                                        System.Console.Write(seminarRow[0]);
+
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        System.Console.Write(ex.Message);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                Response.Write("<tr>");
+                                Response.Write(" <td>");
+                                Response.Write("     <input name='username' type='text' size='40' value='找不到内容！'/>");
+                                Response.Write(" </td>");
+                                Response.Write("</tr>");
+                            }
+                        %>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <button type="button">保存</button>
 
         <div class="alert" role="alert" id="result"></div>
     </div>
-    <script type="text/javascript">
-        $('button').click(function () {
-            
-            var files = $('#avatar').prop('files');
-            var data = new FormData();
-            data.append('avatar', files[0]);
-            $.ajax({
-                url: './upload.aspx',
-                type: 'POST',
-                data: data,
-                cache: false,
-                processData: false,
-                contentType: false,
-                success: function (data) {
-                    console.log(data);
-                    $("#result").text(JSON.stringify(data)).addClass("alert-success").removeClass("alert-danger");
-                },
-                error: function (err) {
-                    console.error(err);
-                    $("#result").html(err.responseText).removeClass("alert-success").addClass("alert-danger");
-                }
-            });
-        });
-    </script>
 </body>
 </html>
