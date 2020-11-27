@@ -61,8 +61,11 @@ namespace DotNetExp
                     {
                         Session["cur_id"] = dataSet.Tables[0].Rows[0][0];
                         Session["cur_type"] = usertype;
-                        if(dataSet.Tables[0].Rows[0][1].ToString().Equals("0"))
-                            Session["cur_activate"] = "0";
+                        if(!usertype.Equals("admin"))
+                        {
+                            if (dataSet.Tables[0].Rows[0][1].ToString().Equals("0"))
+                                Session["cur_activate"] = "0";
+                        }
                         if (usertype == "admin")
                             Response.Redirect("admin/accountAdmin.aspx");
                         else if (usertype == "teacher")

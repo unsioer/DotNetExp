@@ -11,6 +11,8 @@ namespace DotNetExp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            StatusCheck.loginStatusCheck(Session, Response, "student");
+
             if (Request.Files.Count > 0)
             {
                 try

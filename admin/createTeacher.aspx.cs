@@ -15,6 +15,8 @@ namespace DotNetExp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            StatusCheck.loginStatusCheck(Session, Response, "admin");
+
             if (Request["Request_Method"] == "POST")
             {
                 if (Request["username"] == "")

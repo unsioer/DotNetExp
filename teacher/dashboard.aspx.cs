@@ -11,7 +11,7 @@ namespace DotNetExp.teacher
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            StatusCheck.loginStatusCheck(Session, Response, "teacher");
         }
     }
 }

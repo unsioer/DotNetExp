@@ -14,19 +14,8 @@ namespace DotNetExp.student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["cur_id"] == null || Session["cur_type"] == null)
-            {
-                Response.Redirect("/login.aspx");
-            }
-            else if (!Session["cur_type"].Equals("student"))
-            {
-                Response.Status = "404 Not Found";
-                return;
-            }
-            else if (Session["cur_activate"] != null)
-            {
-                Response.Redirect("/activateAccount.aspx");
-            }
+            StatusCheck.loginStatusCheck(Session, Response, "student");
+
             if (Request["id"]!=null)
             {
                 if(Request["cancel"]!=null && Request["cancel"].Equals("1"))
@@ -54,7 +43,7 @@ namespace DotNetExp.student
                 {
                     SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServerConnection"].ToString());
 
-                    String sql = "INSERT INTO dotnetexp.dbo.seminar_student(seminar_id, student_id, is_deleted) VALUES('" + Request["id"] + "'," + Session["cur_id"] + ", 0);";
+                    String sql = "INSERT INTO dotnetexp.dbo.seminar_student(seminar_id, student_id, enroll_time, is_deleted) VALUES('" + Request["id"] + "'," + Session["cur_id"] + ", GETDATE(), 0);";
                     if (connection.State == ConnectionState.Closed)
                     {
                         connection.Open();

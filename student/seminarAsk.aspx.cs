@@ -14,19 +14,8 @@ namespace DotNetExp.student
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["cur_id"] == null || Session["cur_type"] == null)
-            {
-                Response.Redirect("/login.aspx");
-            }
-            else if (!Session["cur_type"].Equals("student"))
-            {
-                Response.Status = "404 Not Found";
-                return;
-            }
-            else if (Session["cur_activate"] != null)
-            {
-                Response.Redirect("/activateAccount.aspx");
-            }
+            StatusCheck.loginStatusCheck(Session, Response, "student");
+
             if (Request["Request_Method"] == "POST")
             {
                 if (Request["id"] != null)

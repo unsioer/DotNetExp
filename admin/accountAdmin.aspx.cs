@@ -17,6 +17,8 @@ namespace DotNetExp
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            StatusCheck.loginStatusCheck(Session, Response, "admin");
+
             List<String[]> teacherList = new List<string[]>();
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLServerConnection"].ToString());
             string sql = "SELECT id,username,fullname,password,email,is_activated FROM dotnetexp.dbo.teacher WHERE is_deleted=0";

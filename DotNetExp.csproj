@@ -148,6 +148,7 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StatusCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="admin\createTeacher.aspx.cs">
       <DependentUpon>createTeacher.aspx</DependentUpon>

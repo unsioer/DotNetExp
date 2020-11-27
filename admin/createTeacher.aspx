@@ -1,15 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="createTeacher.aspx.cs" Inherits="DotNetExp.createTeacher" %>
-<%
-    if (Session["cur_id"] == null || Session["cur_type"] == null)
-    {
-        Response.Redirect("/login.aspx");
-    }
-    else if (!Session["cur_type"].Equals("admin"))
-    {
-        Response.Status = "404 Not Found";
-        return;
-    }
-%>
 
 <!DOCTYPE html>
 

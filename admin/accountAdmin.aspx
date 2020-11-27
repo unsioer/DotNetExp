@@ -1,16 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="accountAdmin.aspx.cs" Inherits="DotNetExp.accountAdmin" %>
 
-<%
-    if (Session["cur_id"] == null || Session["cur_type"] == null)
-    {
-        Response.Redirect("/login.aspx");
-    }
-    else if (!Session["cur_type"].Equals("admin"))
-    {
-        Response.Status = "404 Not Found";
-        return;
-    }
-%>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
