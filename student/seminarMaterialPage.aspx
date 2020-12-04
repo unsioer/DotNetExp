@@ -16,31 +16,16 @@
 </head>
 <body>
     <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle collapsed" type="button"
-                data-toggle="collapse" data-target="#bs-navbar"
-                aria-controls="bs-navbar" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span> <span
-                    class="icon-bar"></span><span class="icon-bar"></span><span
-                        class="icon-bar"></span>
-            </button>
-            <a href="dashboard.aspx" class="navbar-brand">XMUStudent</a>
-        </div>
-        <nav id="bs-navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="seminar.aspx">讨论课管理</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/logout.aspx">注销</a></li>
-            </ul>
-        </nav>
+        <!-- #include file="studentHeader.aspx" -->
         <div>
-            <h1>文件上传</h1>
+            <h1 class="page-header">文件上传</h1>
             <input type="file" id="avatar" name="avatar">
         </div>
         <button type="button">保存</button>
 
         <div class="alert" role="alert" id="result"></div>
+
+        <!-- #include file="/footer.aspx" -->
     </div>
     <script type="text/javascript">
         $('button').click(function () {
@@ -66,8 +51,8 @@
                         console.error(err);
                         $("#result").html(err.responseText).removeClass("alert-success").addClass("alert-danger");
                     }
-            
-            
+
+
                 });
             }
         });

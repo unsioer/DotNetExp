@@ -112,14 +112,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="activateAccount.aspx" />
+    <Content Include="admin\adminHeader.aspx" />
     <Content Include="admin\editTeacher.aspx" />
+    <Content Include="footer.aspx" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
+    <Content Include="static\img\profile.png" />
     <Content Include="student\dashboard.aspx" />
     <Content Include="student\seminarAsk.aspx" />
     <Content Include="student\seminarEnroll.aspx" />
     <Content Include="student\seminarMaterialPage.aspx" />
     <Content Include="student\seminar.aspx" />
+    <Content Include="student\studentHeader.aspx" />
     <Content Include="teacher\dashboard.aspx" />
     <Content Include="student\upload.aspx" />
     <Content Include="Web.config" />
