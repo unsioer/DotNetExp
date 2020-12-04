@@ -24,8 +24,7 @@
             <form runat="server">
                 <asp:GridView ID="showStudentList" runat="server" AutoGenerateColumns="False"
                     BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth=""
-                    CellPadding="3" GridLines="Horizontal" CssClass="table table-hover table-striped"
-                    >               
+                    CellPadding="3" GridLines="Horizontal" CssClass="table table-hover table-striped">
                     <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
                     <Columns>
                         <asp:BoundField DataField="username" HeaderText="学工号" ItemStyle-CssClass="text-center" />
@@ -33,7 +32,11 @@
                         <asp:BoundField DataField="password" HeaderText="密码" ItemStyle-CssClass="text-center" />
                         <asp:BoundField DataField="email" HeaderText="邮箱" ItemStyle-CssClass="text-center" />
                         <asp:BoundField DataField="is_activated" HeaderText="激活状态" ItemStyle-CssClass="text-center" />
-                        <asp:BoundField DataField="id" HtmlEncode="true" HtmlEncodeFormatString="true"  HeaderText="ID" ItemStyle-CssClass="text-center" />
+                        <asp:BoundField HtmlEncode="false" DataField="id" 
+                            DataFormatString="<a name='edit' type='button' href='editUser.aspx?type=student&id={0}'>编辑</a> <a name='edit' type='button' href='editUser.aspx?type=student&id={0}&reset=1'>重置密码</a> <a name='edit' type='button' href='editUser.aspx?type=student&id={0}&delete=1'>删除</a>"
+                            HeaderText="ID" ItemStyle-CssClass="text-center" />
+
+                        <asp:BoundField HtmlEncode="false" DataField="action" HeaderText="ID" ItemStyle-CssClass="text-center" />
                     </Columns>
                     <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
                     <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -42,7 +45,6 @@
                 </asp:GridView>
             </form>
         </div>
-        <!--<a name='edit' type='button' href='editUser.aspx?type=teacher?id={0}'>编辑</a>" -->
         <div class="col-md-12">
             <h2>教师账号</h2>
             <div class="col-md-12 row">
@@ -77,16 +79,16 @@
                                 {
                                     try
                                     {
-                                        string[] teacherRow = teacherList[i];
+                                        string[] studentRow = teacherList[i];
 
                                         Response.Write("<tr>");
-                                        for (int j = 1; j < teacherRow.Length; j++)
-                                            Response.Write("<td>" + teacherRow[j] + "</td>");
-                                        Response.Write("<td><a name='edit' type='button' href='editUser.aspx?type=teacher&id=" + teacherRow[0] + "'>编辑</> " +
-                                            "<a name='edit' type='button' href='editUser.aspx?type=teacher&id=" + teacherRow[0] + "&reset=1'>重置密码</> " +
-                                            "<a name='edit' type='button' href='editUser.aspx?type=teacher&id=" + teacherRow[0] + "&delete=1'>删除</>" + "</td>");
+                                        for (int j = 1; j < studentRow.Length; j++)
+                                            Response.Write("<td>" + studentRow[j] + "</td>");
+                                        Response.Write("<td><a name='edit' type='button' href='editUser.aspx?type=teacher&id=" + studentRow[0] + "'>编辑</a> " +
+                                            "<a name='edit' type='button' href='editUser.aspx?type=teacher&id=" + studentRow[0] + "&reset=1'>重置密码</a> " +
+                                            "<a name='edit' type='button' href='editUser.aspx?type=teacher&id=" + studentRow[0] + "&delete=1'>删除</a>" + "</td>");
                                         Response.Write("</tr>");
-                                        System.Console.Write(teacherRow[0]);
+                                        System.Console.Write(studentRow[0]);
                                     }
                                     catch (Exception ex)
                                     {

@@ -24,14 +24,14 @@
             }
             else
             {
-                Response.Write("<form id='form1' class='form-horizontal' method='post' runat='server' action='editUser.aspx?type=teacher&id=" + (string)Session["id"] + "'>");
+                Response.Write("<form id='form1' class='form-horizontal' method='post' runat='server' action='editUser.aspx?type=" + Request["type"] + "&id=" + (string)Session["id"] + "'>");
             }
         %>
         <div class="form-group">
             <label for="username" class="col-sm-3 col-sm-offset-1 control-label">学工号<b style="color: red">*</b></label>
             <div class="col-sm-6">
                 <%   
-                    Response.Write("<input name='username' class='form-control' type='text' id='username' value='" + (string)Session["username"] + "' required/>");
+                    Response.Write("<input name='username' class='form-control' type='text' id='username' value='" + (string)Session["username"] + "' required='required'/>");
                 %>
             </div>
         </div>
@@ -39,16 +39,15 @@
             <label for="fullname" class="col-sm-3 col-sm-offset-1 control-label">姓名<b style="color: red">*</b></label>
             <div class="col-sm-6">
                 <%
-                    Response.Write("<input name='fullname' class='form-control' type='text' id='fullname' value='" + (string)Session["fullname"] + "' required/>");
+                    Response.Write("<input name='fullname' class='form-control' type='text' id='fullname' value='" + (string)Session["fullname"] + "' required='required'/>");
                 %>
-                
             </div>
         </div>
         <div class="form-group">
             <label for="password" class="col-sm-3 col-sm-offset-1 control-label">密码</label>
             <div class="col-sm-6">
                 <%   
-                    Response.Write("<input name='password' class='form-control' type='password' id='password' value='" + (string)Session["password"] + "' required/>");
+                    Response.Write("<input name='password' class='form-control' type='password' id='password' value='" + (string)Session["password"] + "' required='required'/>");
                 %>
             </div>
         </div>
@@ -56,7 +55,7 @@
             <label for="password" class="col-sm-3 col-sm-offset-1 control-label">确认密码</label>
             <div class="col-sm-6">
                 <%   
-                    Response.Write("<input name='password2' class='form-control' type='password' id='password' value='" + (string)Session["password"] + "' required/>");
+                    Response.Write("<input name='password2' class='form-control' type='password' id='password' value='" + (string)Session["password"] + "' required='required'/>");
                 %>
             </div>
         </div>
