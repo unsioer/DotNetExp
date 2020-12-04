@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>修改用户信息</title>
@@ -14,19 +15,12 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 
 </head>
+
 <body>
     <!-- #include file="adminHeader.aspx" -->
     <div class="container">
         <a href="accountAdmin.aspx">返回</a>
-        <% if (Session["id"] == null)
-            {
-                Response.Write("<form id='form1' class='form-horizontal' method='post' runat='server' action='editUser.aspx'>");
-            }
-            else
-            {
-                Response.Write("<form id='form1' class='form-horizontal' method='post' runat='server' action='editUser.aspx?type=" + Request["type"] + "&id=" + (string)Session["id"] + "'>");
-            }
-        %>
+        <form id='form1' class='form-horizontal' method='post' runat='server' action=<%#Session["id"] == null?"editUser.aspx":"editUser.aspx?type=" + Request["type"] + "&id=" + (string)Session["id"] %> >;
         <div class="form-group">
             <label for="username" class="col-sm-3 col-sm-offset-1 control-label">学工号<b style="color: red">*</b></label>
             <div class="col-sm-6">

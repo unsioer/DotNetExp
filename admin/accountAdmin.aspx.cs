@@ -25,17 +25,6 @@ namespace DotNetExp
             SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
             DataSet dataSet = new DataSet();
             adapter.Fill(dataSet, "student");
-            DataColumn dc = new DataColumn("action", typeof(string));
-            dc.DefaultValue = "";
-            dataSet.Tables[0].Columns.Add(dc);
-            foreach (DataRow dr in dataSet.Tables[0].Rows)
-            {
-                string id = dr.ItemArray[0].ToString();
-                dr["action"] = "<a name='edit' type='button' href='editUser.aspx?type=student&id=" + id + "'>编辑</a> " +
-                                             "<a name='edit' type='button' href='editUser.aspx?type=student&id=" + id + "&reset=1'>重置密码</a> " +
-                                             "<a name='edit' type='button' href='editUser.aspx?type=student&id=" + id + "&delete=1'>删除</a>" + "";
-
-            }
             showStudentList.DataSource = dataSet.Tables[0];
             showStudentList.DataBind();
 

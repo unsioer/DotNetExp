@@ -34,9 +34,7 @@
                         <asp:BoundField DataField="is_activated" HeaderText="激活状态" ItemStyle-CssClass="text-center" />
                         <asp:BoundField HtmlEncode="false" DataField="id" 
                             DataFormatString="<a name='edit' type='button' href='editUser.aspx?type=student&id={0}'>编辑</a> <a name='edit' type='button' href='editUser.aspx?type=student&id={0}&reset=1'>重置密码</a> <a name='edit' type='button' href='editUser.aspx?type=student&id={0}&delete=1'>删除</a>"
-                            HeaderText="ID" ItemStyle-CssClass="text-center" />
-
-                        <asp:BoundField HtmlEncode="false" DataField="action" HeaderText="ID" ItemStyle-CssClass="text-center" />
+                            HeaderText="操作" ItemStyle-CssClass="text-center" />
                     </Columns>
                     <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
                     <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />

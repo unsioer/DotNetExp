@@ -91,7 +91,7 @@ namespace DotNetExp
                 if (dataSet.Tables[0].Rows.Count == 0)
                 {
                     ClientScript.RegisterStartupScript(GetType(), "用户不存在", "<script language='javascript'>alert('对不起，用户不存在！')</script>");
-                    
+                    return;
                 }
 
                 sql = "UPDATE dotnetexp.dbo." + type + " SET is_deleted=1 WHERE id=" + Request["id"];
