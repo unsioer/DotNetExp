@@ -18,7 +18,7 @@ namespace DotNetExp
             {
                 Response.Redirect("/login.aspx");
             }
-            else if (Session["cur_activate"] == null|| Session["cur_type"]==null || (!Session["cur_type"].Equals("student") && !Session["cur_type"].Equals("teacher")))
+            else if (Session["cur_activate"] == null || (!Session["cur_type"].Equals("student") && !Session["cur_type"].Equals("teacher")))
             {
                 Response.StatusCode = 404;
                 Response.End();
@@ -69,10 +69,10 @@ namespace DotNetExp
                         else
                             Response.Redirect("student/dashboard.aspx");
                     }
-                    
+
 
                 }
-                
+
             }
             else if (Request["Request_Method"] == "GET" && Session["cur_id"] != null)
             {

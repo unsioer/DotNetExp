@@ -112,7 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="activateAccount.aspx" />
+    <Content Include="header.aspx" />
     <Content Include="admin\adminHeader.aspx" />
+    <Content Include="editProfile.aspx" />
     <Content Include="admin\editUser.aspx" />
     <Content Include="footer.aspx" />
     <Content Include="login.aspx" />
@@ -137,6 +139,13 @@
     </Compile>
     <Compile Include="activateAccount.aspx.designer.cs">
       <DependentUpon>activateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editProfile.aspx.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editProfile.aspx.designer.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\editUser.aspx.cs">
       <DependentUpon>editUser.aspx</DependentUpon>

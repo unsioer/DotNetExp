@@ -20,7 +20,6 @@
     <!-- #include file="adminHeader.aspx" -->
     <div class="container">
         <h1 class="page-header"><b>管理员界面——创建用户</b></h1>
-        <a href="accountAdmin.aspx">返回管理页</a>
         <form name="myFORM" class="form-horizontal" method="post" action="createUser.aspx" runat="server">
             <div class="form-group">
                 <label for="username" class="col-sm-3 col-sm-offset-1 control-label">账号类型</label>
@@ -60,8 +59,9 @@
                 </div>
             </div>
             <div class="form-group" style="text-align:center;">
-                <input type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
-                    <input name="Reset" type="reset" id="Reset" value="取消" />
+                <input class="btn btn-success" type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
+                    <input class="btn" name="Reset" type="reset" id="Reset" value="取消" />&nbsp; &nbsp;
+                <button class="btn btn-info"><a href="accountAdmin.aspx" style="color: white;">返回</a></button>
             </div>
         </form>
 

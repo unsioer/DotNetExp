@@ -45,17 +45,6 @@
         </div>
         <div class="col-md-12">
             <h2>教师账号</h2>
-            <div class="col-md-12 row">
-                <div class="col-sm-4">
-                    <a class="btn btn-info" href="accountAdmin.aspx">刷新</a>
-                </div>
-                <div class="col-sm-4">
-                    <a class="btn btn-success" href="createUser.aspx">新建</a>
-                </div>
-                <div class="col-sm-4">
-                </div>
-            </div>
-
             <div class="col-md-12">
                 <table class="table table-hover table-striped">
                     <thead>

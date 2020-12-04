@@ -8,15 +8,10 @@
                     class="icon-bar"></span><span class="icon-bar"></span><span
                         class="icon-bar"></span>
             </button>
-            <a href="accountAdmin.aspx" class="navbar-brand">XMUAdmin</a>
+            <a href="" class="navbar-brand">XMUUser</a>
         </div>
         <nav id="bs-navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li id="index"><a href="accountAdmin.aspx">管理</a></li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li id="index"><a href="createUser.aspx">新建账号</a></li>
-            </ul>
+
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/logout.aspx">注销</a></li>
             </ul>

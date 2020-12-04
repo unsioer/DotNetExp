@@ -10,6 +10,22 @@ namespace DotNetExp
     {
         public static int loginStatusCheck(HttpSessionState Session, HttpResponse Response, String userType)
         {
+            if(userType.Equals("user"))
+            {
+                if (Session["cur_id"] == null || Session["cur_type"] == null)
+                {
+                    Response.Redirect("/login.aspx");
+                }
+                else if (!Session["cur_type"].Equals("teacher")&& !Session["cur_type"].Equals("student"))
+                {
+                    Response.StatusCode = 404;
+                    Response.End();
+                }
+                else if (Session["cur_activate"] != null)
+                {
+                    Response.Redirect("/activateAccount.aspx");
+                }
+            }
             if(userType.Equals("teacher"))
             {
                 if (Session["cur_id"] == null || Session["cur_type"] == null)

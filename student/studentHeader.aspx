@@ -14,6 +14,9 @@
             <ul class="nav navbar-nav">
                 <li><a href="seminar.aspx">讨论课管理</a></li>
             </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="/editProfile.aspx">账户</a></li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/logout.aspx">注销</a></li>
             </ul>

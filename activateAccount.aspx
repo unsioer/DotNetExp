@@ -16,26 +16,8 @@
 </head>
 
 <body>
-    <header class="navbar navbar-static-top bs-docs-nav box-shadow" id="top">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button"
-                    data-toggle="collapse" data-target="#bs-navbar"
-                    aria-controls="bs-navbar" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span> <span
-                        class="icon-bar"></span><span class="icon-bar"></span><span
-                            class="icon-bar"></span>
-                </button>
-                <a href="accountAdmin.aspx" class="navbar-brand">XMUUser</a>
-            </div>
-            <nav id="bs-navbar" class="collapse navbar-collapse">
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/logout.aspx">注销</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- #include file="header.aspx" -->
+     
     <div class="container">
         <h1 class="page-header"><b>激活用户</b></h1>
     <form name="myFORM" class='form-horizontal' method="post" action="activateAccount.aspx" runat="server">

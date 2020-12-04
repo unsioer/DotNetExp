@@ -1,8 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="editUser.aspx.cs" Inherits="DotNetExp.editUser" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="editProfile.aspx.cs" Inherits="DotNetExp.editProfile" %>
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,19 +15,19 @@
 </head>
 
 <body>
-    <!-- #include file="adminHeader.aspx" -->
+    <!-- #include file="header.aspx" -->
     <div class="container">
 
         <form id='form1' class='form-horizontal' method='post' runat='server' action='<%#Session["id"] == null?"editUser.aspx":"editUser.aspx?type=" + Request["type"] + "&id=" + (string)Session["id"] %>'>
-            ;
-        <div class="form-group">
-            <label for="username" class="col-sm-3 col-sm-offset-1 control-label">学工号<b style="color: red">*</b></label>
-            <div class="col-sm-6">
-                <%   
-                    Response.Write("<input name='username' class='form-control' type='text' id='username' value='" + (string)Session["username"] + "' required='required'/>");
-                %>
+
+            <div class="form-group">
+                <label for="username" class="col-sm-3 col-sm-offset-1 control-label">学工号<b style="color: red">*</b></label>
+                <div class="col-sm-6">
+                    <%   
+                        Response.Write("<input name='username' class='form-control' type='text' id='username' value='" + (string)Session["username"] + "' required='required'/>");
+                    %>
+                </div>
             </div>
-        </div>
             <div class="form-group">
                 <label for="fullname" class="col-sm-3 col-sm-offset-1 control-label">姓名<b style="color: red">*</b></label>
                 <div class="col-sm-6">
@@ -62,7 +60,7 @@
                     %>
                 </div>
             </div>
-            <div class="form-group" style="text-align:center;">
+            <div class="form-group" style="text-align: center;">
                 <input class="btn btn-success" type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
                     <input class="btn" name="Reset" type="reset" id="Reset" value="取消" />&nbsp; &nbsp;
                 <button class="btn btn-info"><a href="accountAdmin.aspx" style="color: white;">返回</a></button>
@@ -73,3 +71,4 @@
     <!-- #include file="/footer.aspx" -->
 </body>
 </html>
+
