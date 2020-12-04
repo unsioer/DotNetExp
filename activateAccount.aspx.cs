@@ -33,7 +33,7 @@ namespace DotNetExp
                     adapter.Fill(dataSet, "teacher");
                     if (dataSet.Tables[0].Rows.Count > 0)
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "教工号已存在", "<script language='javascript'>alert('对不起，您修改的教工号已存在，请重新输入！')</script>");
+                        ClientScript.RegisterStartupScript(GetType(), "教工号已存在", "<script language='javascript'>alert('对不起，您修改的教工号已存在，请重新输入！')</script>");
                         return;
                     }
 

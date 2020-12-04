@@ -23,7 +23,7 @@
 
 <body>
     <p><b>激活用户</b></p>
-    <form name="myFORM" method="post" action="createTeacher.aspx" runat="server">
+    <form name="myFORM" method="post" action="createUser.aspx" runat="server">
         <table border="1">
             <tr>
                 <td>学工号</td>

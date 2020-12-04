@@ -42,7 +42,7 @@
                 </asp:GridView>
             </form>
         </div>
-        <!--<a name='edit' type='button' href='editTeacher.aspx?id={0}'>编辑</a>" -->
+        <!--<a name='edit' type='button' href='editUser.aspx?type=teacher?id={0}'>编辑</a>" -->
         <div class="col-md-12">
             <h2>教师账号</h2>
             <div class="col-md-12 row">
@@ -50,7 +50,7 @@
                     <a class="btn btn-info" href="accountAdmin.aspx">刷新</a>
                 </div>
                 <div class="col-sm-4">
-                    <a class="btn btn-success" href="createTeacher.aspx">新建</a>
+                    <a class="btn btn-success" href="createUser.aspx">新建</a>
                 </div>
                 <div class="col-sm-4">
                 </div>
@@ -82,9 +82,9 @@
                                         Response.Write("<tr>");
                                         for (int j = 1; j < teacherRow.Length; j++)
                                             Response.Write("<td>" + teacherRow[j] + "</td>");
-                                        Response.Write("<td><a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "'>编辑</> " +
-                                            "<a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "&reset=1'>重置密码</> " +
-                                            "<a name='edit' type='button' href='editTeacher.aspx?id=" + teacherRow[0] + "&delete=1'>删除</>" + "</td>");
+                                        Response.Write("<td><a name='edit' type='button' href='editUser.aspx?type=teacher&id=" + teacherRow[0] + "'>编辑</> " +
+                                            "<a name='edit' type='button' href='editUser.aspx?type=teacher&id=" + teacherRow[0] + "&reset=1'>重置密码</> " +
+                                            "<a name='edit' type='button' href='editUser.aspx?type=teacher&id=" + teacherRow[0] + "&delete=1'>删除</>" + "</td>");
                                         Response.Write("</tr>");
                                         System.Console.Write(teacherRow[0]);
                                     }

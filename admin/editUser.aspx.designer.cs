@@ -11,7 +11,7 @@ namespace DotNetExp
 {
 
 
-    public partial class editTeacher
+    public partial class editUser
     {
     }
 }

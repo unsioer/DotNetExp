@@ -113,7 +113,7 @@
   <ItemGroup>
     <Content Include="activateAccount.aspx" />
     <Content Include="admin\adminHeader.aspx" />
-    <Content Include="admin\editTeacher.aspx" />
+    <Content Include="admin\editUser.aspx" />
     <Content Include="footer.aspx" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
@@ -127,7 +127,7 @@
     <Content Include="teacher\dashboard.aspx" />
     <Content Include="student\upload.aspx" />
     <Content Include="Web.config" />
-    <Content Include="admin\createTeacher.aspx" />
+    <Content Include="admin\createUser.aspx" />
     <Content Include="admin\accountAdmin.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -138,12 +138,12 @@
     <Compile Include="activateAccount.aspx.designer.cs">
       <DependentUpon>activateAccount.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\editTeacher.aspx.cs">
-      <DependentUpon>editTeacher.aspx</DependentUpon>
+    <Compile Include="admin\editUser.aspx.cs">
+      <DependentUpon>editUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\editTeacher.aspx.designer.cs">
-      <DependentUpon>editTeacher.aspx</DependentUpon>
+    <Compile Include="admin\editUser.aspx.designer.cs">
+      <DependentUpon>editUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -154,12 +154,12 @@
     </Compile>
     <Compile Include="StatusCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="admin\createTeacher.aspx.cs">
-      <DependentUpon>createTeacher.aspx</DependentUpon>
+    <Compile Include="admin\createUser.aspx.cs">
+      <DependentUpon>createUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\createTeacher.aspx.designer.cs">
-      <DependentUpon>createTeacher.aspx</DependentUpon>
+    <Compile Include="admin\createUser.aspx.designer.cs">
+      <DependentUpon>createUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\accountAdmin.aspx.cs">
       <DependentUpon>accountAdmin.aspx</DependentUpon>

@@ -27,15 +27,15 @@ namespace DotNetExp
             {
                 if (Request["username"] == "")
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "学工号为空", "<script language='javascript'>alert('对不起，您输入的学工号为空，请重新输入！')</script>");
+                    ClientScript.RegisterStartupScript(GetType(), "学工号为空", "<script language='javascript'>alert('对不起，您输入的学工号为空，请重新输入！')</script>");
                 }
                 else if (Request["password"] == "")
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "密码为空", "<script language='javascript'>alert('对不起，您输入的密码为空，请重新输入！')</script>");
+                    ClientScript.RegisterStartupScript(GetType(), "密码为空", "<script language='javascript'>alert('对不起，您输入的密码为空，请重新输入！')</script>");
                 }
                 else if (Request["type"] != "admin" && Request["type"] != "teacher" && Request["type"] != "student")
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "用户类型错误", "<script language='javascript'>alert('对不起，您请求的用户类型有误！')</script>");
+                    ClientScript.RegisterStartupScript(GetType(), "用户类型错误", "<script language='javascript'>alert('对不起，您请求的用户类型有误！')</script>");
                 }
                 else
                 {
@@ -54,7 +54,7 @@ namespace DotNetExp
                     adapter.Fill(dataSet, "user");
                     if (dataSet.Tables[0].Rows.Count == 0)
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "错误", "<script language='javascript'>alert('对不起，您输入的账号或密码不正确！')</script>");
+                        ClientScript.RegisterStartupScript(GetType(), "错误", "<script language='javascript'>alert('对不起，您输入的账号或密码不正确！')</script>");
                         return;
                     }
                     else
