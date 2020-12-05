@@ -17,7 +17,7 @@
 <body>
     <div class="container">
         <!-- #include file="studentHeader.aspx" -->
-        <h1>讨论课提问</h1>
+        <h1 class="page-header">讨论课提问</h1>
         <%
             if (Request["id"] != null)
             {

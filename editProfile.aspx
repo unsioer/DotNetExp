@@ -17,7 +17,7 @@
 <body>
     <!-- #include file="header.aspx" -->
     <div class="container">
-
+        <h1 class="page-header">修改用户信息</h1>
         <form id='form1' class='form-horizontal' method='post' runat='server' action='<%#Session["cur_id"] == null?"editUser.aspx":"editUser.aspx?type=" + Request["type"] + "&id=" + (string)Session["id"] %>'>
 
             <div class="form-group">

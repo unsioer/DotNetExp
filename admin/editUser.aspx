@@ -19,17 +19,16 @@
 <body>
     <!-- #include file="adminHeader.aspx" -->
     <div class="container">
-
+        <h1 class="page-header"><b>管理员界面——编辑用户</b></h1>
         <form id='form1' class='form-horizontal' method='post' runat='server' action='<%#Session["id"] == null?"editUser.aspx":"editUser.aspx?type=" + Request["type"] + "&id=" + (string)Session["id"] %>'>
-            ;
-        <div class="form-group">
-            <label for="username" class="col-sm-3 col-sm-offset-1 control-label">学工号<b style="color: red">*</b></label>
-            <div class="col-sm-6">
-                <%   
-                    Response.Write("<input name='username' class='form-control' type='text' id='username' value='" + (string)Session["username"] + "' required='required'/>");
-                %>
+            <div class="form-group">
+                <label for="username" class="col-sm-3 col-sm-offset-1 control-label">学工号<b style="color: red">*</b></label>
+                <div class="col-sm-6">
+                    <%   
+                        Response.Write("<input name='username' class='form-control' type='text' id='username' value='" + (string)Session["username"] + "' required='required'/>");
+                    %>
+                </div>
             </div>
-        </div>
             <div class="form-group">
                 <label for="fullname" class="col-sm-3 col-sm-offset-1 control-label">姓名<b style="color: red">*</b></label>
                 <div class="col-sm-6">
@@ -62,7 +61,7 @@
                     %>
                 </div>
             </div>
-            <div class="form-group" style="text-align:center;">
+            <div class="form-group" style="text-align: center;">
                 <input class="btn btn-success" type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
                     <input class="btn" name="Reset" type="reset" id="Reset" value="取消" />&nbsp; &nbsp;
                 <button class="btn btn-info"><a href="accountAdmin.aspx" style="color: white;">返回</a></button>
