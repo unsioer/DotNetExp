@@ -12,7 +12,7 @@
  Target Server Version : 15002070
  File Encoding         : 65001
 
- Date: 05/12/2020 03:21:33
+ Date: 05/12/2020 11:30:34
 */
 
 
@@ -169,19 +169,19 @@ GO
 INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'2', N'2', N'4', N'2020-11-26 16:12:00.000', N'1', NULL)
 GO
 
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'3', N'1', N'4', NULL, N'1', NULL)
+INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'3', N'1', N'4', N'2020-11-26 16:13:05.000', N'1', NULL)
 GO
 
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'4', N'2', N'4', NULL, N'1', NULL)
+INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'4', N'2', N'4', N'2020-11-26 16:14:00.000', N'1', NULL)
 GO
 
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'5', N'1', N'4', NULL, N'1', NULL)
+INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'5', N'1', N'4', N'2020-11-26 16:18:00.000', N'1', NULL)
 GO
 
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'6', N'2', N'4', NULL, N'1', N'1.什么是低效的异常？')
+INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'6', N'2', N'4', N'2020-11-26 16:19:00.000', N'1', N'1.什么是低效的异常？')
 GO
 
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'7', N'3', N'4', NULL, N'1', NULL)
+INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'7', N'3', N'4', N'2020-11-26 16:31:00.000', N'1', NULL)
 GO
 
 INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'8', N'1', N'4', N'2020-11-27 18:10:35.560', N'1', NULL)
@@ -190,22 +190,13 @@ GO
 INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'9', N'1', N'4', N'2020-11-27 18:18:22.973', N'0', NULL)
 GO
 
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'10', N'2', N'1', N'2020-12-05 02:38:29.533', N'0', NULL)
+INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'10', N'2', N'4', N'2020-11-28 18:10:24.317', N'0', NULL)
 GO
 
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'11', N'1', N'4', NULL, N'1', NULL)
+INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'11', N'3', N'4', N'2020-11-28 18:10:37.037', N'0', N'hjdjkh?')
 GO
 
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'12', N'1', N'4', NULL, N'1', NULL)
-GO
-
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'13', N'1', N'4', NULL, N'1', NULL)
-GO
-
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'14', N'2', N'4', N'2020-11-27 18:10:24.317', N'0', NULL)
-GO
-
-INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'15', N'3', N'4', N'2020-11-27 18:10:37.037', N'0', N'hjdjkh?')
+INSERT INTO [dbo].[seminar_student] ([id], [seminar_id], [student_id], [enroll_time], [is_deleted], [question]) VALUES (N'12', N'1', N'5', N'2020-12-05 11:24:05.803', N'0', NULL)
 GO
 
 SET IDENTITY_INSERT [dbo].[seminar_student] OFF
@@ -252,7 +243,7 @@ GO
 INSERT INTO [dbo].[student] ([id], [username], [fullname], [password], [email], [is_deleted], [is_activated]) VALUES (N'4', N'100', N'hjh', N'hjh', N'hjh@qq.com', N'0', N'1')
 GO
 
-INSERT INTO [dbo].[student] ([id], [username], [fullname], [password], [email], [is_deleted], [is_activated]) VALUES (N'5', N'24000004', N'abeng', N'123', NULL, N'0', N'0')
+INSERT INTO [dbo].[student] ([id], [username], [fullname], [password], [email], [is_deleted], [is_activated]) VALUES (N'5', N'24000004', N'abeng', N'ab1234', N'abeng@stu.xmu.edu.cn', N'0', N'1')
 GO
 
 INSERT INTO [dbo].[student] ([id], [username], [fullname], [password], [email], [is_deleted], [is_activated]) VALUES (N'6', N'24000005', N'TT', N'44', N'', N'1', N'0')
@@ -366,7 +357,7 @@ GO
 -- ----------------------------
 -- Auto increment value for seminar_student
 -- ----------------------------
-DBCC CHECKIDENT ('[dbo].[seminar_student]', RESEED, 15)
+DBCC CHECKIDENT ('[dbo].[seminar_student]', RESEED, 16)
 GO
 
 
