@@ -39,46 +39,31 @@ namespace DotNetExp
                     string email = Request["email"];
                     string usertype = Session["cur_type"].ToString();
 
-                    string sql = "SELECT * FROM dotnetexp.dbo." + usertype + " WHERE username='" + username + "' AND id!=" + Session["cur_id"] + ";";
-                    SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
-                    DataSet dataSet = new DataSet();
-                    adapter.Fill(dataSet, "teacher");
-                    if (dataSet.Tables[0].Rows.Count > 0)
+
+                    string sql = "UPDATE dotnetexp.dbo." + usertype + " SET fullname='" + fullname + "', password='" + password + "',email='" + email + "' WHERE is_deleted=0 AND id=" + Session["cur_id"] + ";";
+                    if (connection.State == ConnectionState.Closed)
                     {
-                        ClientScript.RegisterStartupScript(GetType(), "教工号已存在", "<script language='javascript'>alert('对不起，您修改的教工号已存在，请重新输入！')</script>");
+                        connection.Open();
+                    }
+
+                    SqlCommand cmd = new SqlCommand(sql, connection);
+                    object obj = cmd.ExecuteNonQuery();
+                    if (obj != null)
+                    {
+                        //Success
                     }
                     else
                     {
-                        sql = "UPDATE dotnetexp.dbo." + usertype + " SET username='" + username + "', fullname='" + fullname + "', password='" + password + "',email='" + email + "' WHERE is_deleted=0 AND id=" + Session["cur_id"] + ";";
-                        if (connection.State == ConnectionState.Closed)
-                        {
-                            connection.Open();
-                        }
-                        SqlCommand cmd = new SqlCommand(sql, connection);
-                        object obj = cmd.ExecuteNonQuery();
-                        if (obj != null)
-                        {
-                            //Success
-                        }
-                        else
-                        {
-                            //Fail
-                        }
-
-                        if (usertype == "teacher")
-                            Response.Redirect("teacher/dashboard.aspx");
-                        else
-                            Response.Redirect("student/dashboard.aspx");
-
+                        //Fail
                     }
 
+                    if (usertype == "teacher")
+                        Response.Redirect("teacher/dashboard.aspx");
+                    else
+                        Response.Redirect("student/dashboard.aspx");
                 }
-
-
             }
-
-
 
             else if (Request["Request_Method"] == "GET")
             {

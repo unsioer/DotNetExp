@@ -18,13 +18,13 @@
     <!-- #include file="header.aspx" -->
     <div class="container">
 
-        <form id='form1' class='form-horizontal' method='post' runat='server' action='<%#Session["id"] == null?"editUser.aspx":"editUser.aspx?type=" + Request["type"] + "&id=" + (string)Session["id"] %>'>
+        <form id='form1' class='form-horizontal' method='post' runat='server' action='<%#Session["cur_id"] == null?"editUser.aspx":"editUser.aspx?type=" + Request["type"] + "&id=" + (string)Session["id"] %>'>
 
             <div class="form-group">
                 <label for="username" class="col-sm-3 col-sm-offset-1 control-label">学工号<b style="color: red">*</b></label>
                 <div class="col-sm-6">
                     <%   
-                        Response.Write("<input name='username' class='form-control' type='text' id='username' value='" + (string)Session["username"] + "' required='required'/>");
+                        Response.Write("<input name='username' class='form-control' type='text' id='username' value='" + (string)Session["username"] + "' disabled='disabled' />");
                     %>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 <label for="password" class="col-sm-3 col-sm-offset-1 control-label">确认密码</label>
                 <div class="col-sm-6">
                     <%   
-                        Response.Write("<input name='password2' class='form-control' type='password' id='password' value='" + (string)Session["password"] + "' required='required'/>");
+                        Response.Write("<input name='password2' class='form-control' type='password' id='password2' value='" + (string)Session["password"] + "' required='required'/>");
                     %>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="form-group" style="text-align: center;">
                 <input class="btn btn-success" type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
                     <input class="btn" name="Reset" type="reset" id="Reset" value="取消" />&nbsp; &nbsp;
-                <button class="btn btn-info"><a href="accountAdmin.aspx" style="color: white;">返回</a></button>
+                <button class="btn btn-info"><a href='/' style="color: white;">返回</a></button>
             </div>
         </form>
     </div>

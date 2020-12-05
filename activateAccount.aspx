@@ -17,102 +17,56 @@
 
 <body>
     <!-- #include file="header.aspx" -->
-     
+
     <div class="container">
         <h1 class="page-header"><b>激活用户</b></h1>
-    <form name="myFORM" class='form-horizontal' method="post" action="activateAccount.aspx" runat="server">
-        <div class="form-group">
-            <label for="username" class="col-sm-3 col-sm-offset-1 control-label">学工号<b style="color: red">*</b></label>
-            <div class="col-sm-6">
-                <%   
-                    Response.Write("<input name='username' class='form-control' type='text' id='username' value='" + (string)Session["username"] + "' disabled='disabled'/>");
-                %>
+        <form name="myFORM" class='form-horizontal' method="post" action="activateAccount.aspx" runat="server">
+            <div class="form-group">
+                <label for="username" class="col-sm-3 col-sm-offset-1 control-label">学工号<b style="color: red">*</b></label>
+                <div class="col-sm-6">
+                    <%   
+                        Response.Write("<input name='username' class='form-control' type='text' id='username' value='" + (string)Session["username"] + "' disabled='disabled'/>");
+                    %>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="fullname" class="col-sm-3 col-sm-offset-1 control-label">姓名<b style="color: red">*</b></label>
-            <div class="col-sm-6">
-                <%
-                    Response.Write("<input name='fullname' class='form-control' type='text' id='fullname' value='" + (string)Session["fullname"] + "' required='required'/>");
-                %>
-                
+            <div class="form-group">
+                <label for="fullname" class="col-sm-3 col-sm-offset-1 control-label">姓名<b style="color: red">*</b></label>
+                <div class="col-sm-6">
+                    <%
+                        Response.Write("<input name='fullname' class='form-control' type='text' id='fullname' value='" + (string)Session["fullname"] + "' required='required'/>");
+                    %>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="password" class="col-sm-3 col-sm-offset-1 control-label">密码</label>
-            <div class="col-sm-6">
-                <%   
-                    Response.Write("<input name='password' class='form-control' type='password' id='password' value='" + (string)Session["password"] + "' required='required'/>");
-                %>
+            <div class="form-group">
+                <label for="password" class="col-sm-3 col-sm-offset-1 control-label">密码</label>
+                <div class="col-sm-6">
+                    <%   
+                        Response.Write("<input name='password' class='form-control' type='password' id='password' value='" + (string)Session["password"] + "' required='required'/>");
+                    %>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="password" class="col-sm-3 col-sm-offset-1 control-label">确认密码</label>
-            <div class="col-sm-6">
-                <%   
-                    Response.Write("<input name='password2' class='form-control' type='password' id='password' value='" + (string)Session["password"] + "' required='required'/>");
-                %>
+            <div class="form-group">
+                <label for="password" class="col-sm-3 col-sm-offset-1 control-label">确认密码</label>
+                <div class="col-sm-6">
+                    <%   
+                        Response.Write("<input name='password2' class='form-control' type='password' id='password2' value='" + (string)Session["password"] + "' required='required'/>");
+                    %>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="password" class="col-sm-3 col-sm-offset-1 control-label">邮箱</label>
-            <div class="col-sm-6">
-                <%   
-                    Response.Write("<input name='email' class='form-control' type='email' id='email' value='" + (string)Session["email"] + "'/>");
-                %>
+            <div class="form-group">
+                <label for="password" class="col-sm-3 col-sm-offset-1 control-label">邮箱</label>
+                <div class="col-sm-6">
+                    <%   
+                        Response.Write("<input name='email' class='form-control' type='email' id='email' value='" + (string)Session["email"] + "'/>");
+                    %>
+                </div>
             </div>
-        </div>
-        <div class="form-group" style="text-align: center;">
-            <input type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
-                    <input name="Reset" type="reset" id="Reset" value="取消" />
-        </div>
-        </form> 
+            <div class="form-group" style="text-align: center;">
+                <input class="btn btn-success" type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
+                    <input class="btn" name="Reset" type="reset" id="Reset" value="取消" />
+            </div>
+        </form>
     </div>
-        <!--table border="1">
-            <tr>
-                <td>学工号</td>
-                <td>
-                    <input name="username" type="text" id="username" disabled="disabled" />
-                    <b style="color: red">*</b>
-                </td>
-            </tr>
-            <tr>
-                <td>姓名</td>
-                <td>
-                    <input name="fullname" type="text" id="fullname" required="required" />
-                    <b style="color: red">*</b>
-                </td>
-            </tr>
-            <tr>
-                <td>新密码</td>
-                <td>
-                    <input name="password" type="password" id="password" required="required" />
-                </td>
-            </tr>
-            <tr>
-                <td>确认密码</td>
-                <td>
-                    <input name="password2" type="password" id="password2" required="required" />
-                </td>
-            </tr>
-            <tr>
-                <td>邮箱：</td>
-                <td>
-                    <input name="email" cols="25" id="email" />
-
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
-                    <input name="Reset" type="reset" id="Reset" value="取消" />
-                </td>
-            </tr>
-        </!table>
-
-    </form>
-    </div-->
-    
 
 </body>
 

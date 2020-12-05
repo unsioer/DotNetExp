@@ -50,7 +50,7 @@
                 <label for="password" class="col-sm-3 col-sm-offset-1 control-label">确认密码</label>
                 <div class="col-sm-6">
                     <%   
-                        Response.Write("<input name='password2' class='form-control' type='password' id='password' value='" + (string)Session["password"] + "' required='required'/>");
+                        Response.Write("<input name='password2' class='form-control' type='password' id='password2' value='" + (string)Session["password"] + "' required='required'/>");
                     %>
                 </div>
             </div>

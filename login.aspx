@@ -40,11 +40,10 @@
                     <input type="radio" name="type" value="student" />学生
                 </div>
             </div>
-            <div class="form-group" style="text-align:center;">
-                <input type="submit" name="Submit" value="登录" />&nbsp; &nbsp; 
-                    <input name="Reset" type="reset" id="Reset" value="重置" />
+            <div class="form-group" style="text-align: center;">
+                <input class="btn btn-success" type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
+                    <input class="btn" name="Reset" type="reset" id="Reset" value="取消" />
             </div>
-
         </form>
     </div>
     <!-- include file="/footer.aspx" -->
