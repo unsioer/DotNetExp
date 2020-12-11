@@ -42,7 +42,8 @@
             </div>
             <div class="form-group" style="text-align: center;">
                 <input class="btn btn-success" type="submit" name="Submit" value="提交" />&nbsp; &nbsp;
-                    <input class="btn" name="Reset" type="reset" id="Reset" value="取消" />
+                    <input class="btn" name="Reset" type="reset" id="Reset" value="取消" />&nbsp; &nbsp;
+                <a class="btn btn-primary" href="/findPassword.aspx">找回密码</a>
             </div>
         </form>
     </div>

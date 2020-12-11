@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="activateAccount.aspx" />
+    <Content Include="findPassword.aspx" />
     <Content Include="header.aspx" />
     <Content Include="admin\adminHeader.aspx" />
     <Content Include="editProfile.aspx" />
@@ -119,6 +120,7 @@
     <Content Include="footer.aspx" />
     <Content Include="login.aspx" />
     <Content Include="logout.aspx" />
+    <Content Include="reset.aspx" />
     <Content Include="static\img\profile.png" />
     <Content Include="student\dashboard.aspx" />
     <Content Include="student\seminarAsk.aspx" />
@@ -154,12 +156,26 @@
     <Compile Include="admin\editUser.aspx.designer.cs">
       <DependentUpon>editUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="findPassword.aspx.cs">
+      <DependentUpon>findPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="findPassword.aspx.designer.cs">
+      <DependentUpon>findPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reset.aspx.cs">
+      <DependentUpon>reset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reset.aspx.designer.cs">
+      <DependentUpon>reset.aspx</DependentUpon>
     </Compile>
     <Compile Include="StatusCheck.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
