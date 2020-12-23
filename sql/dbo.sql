@@ -392,3 +392,60 @@ WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW
 ON [PRIMARY]
 GO
 
+
+-- ----------------------------
+-- Table structure for reset_student
+-- ----------------------------
+IF EXISTS (SELECT * FROM sys.all_objects WHERE object_id = OBJECT_ID(N'[dbo].[reset_student]') AND type IN ('U'))
+	DROP TABLE [dbo].[reset_student]
+GO
+
+CREATE TABLE [dbo].[reset_student] (
+  [id] bigint  IDENTITY(1,1) NOT NULL,
+  [student_id] bigint  NULL,
+  [reset_time] datetime  NULL,
+  [token] varchar(255) COLLATE Chinese_PRC_CI_AS  NULL
+)
+GO
+
+ALTER TABLE [dbo].[reset_student] SET (LOCK_ESCALATION = TABLE)
+GO
+
+
+-- ----------------------------
+-- Records of reset_student
+-- ----------------------------
+SET IDENTITY_INSERT [dbo].[reset_student] ON
+GO
+
+INSERT INTO [dbo].[reset_student] ([id], [student_id], [reset_time], [token]) VALUES (N'1', N'6', N'2020-12-11 17:16:52.960', N'49-08-F9-30-5F-24-B4-27-E9-E7-EA-C6-9F-4D-B5-51')
+GO
+
+INSERT INTO [dbo].[reset_student] ([id], [student_id], [reset_time], [token]) VALUES (N'2', N'6', N'2020-12-11 17:18:10.563', N'49-08-F9-30-5F-24-B4-27-E9-E7-EA-C6-9F-4C-B5-51')
+GO
+
+INSERT INTO [dbo].[reset_student] ([id], [student_id], [reset_time], [token]) VALUES (N'3', N'6', N'2020-12-11 17:25:53.177', N'49-08-F9-30-5F-24-B4-27-E9-E7-EA-C6-9F-4C-B5-51')
+GO
+
+INSERT INTO [dbo].[reset_student] ([id], [student_id], [reset_time], [token]) VALUES (N'4', N'6', N'2020-12-11 17:32:57.703', N'49-08-F9-30-5F-24-B4-27-E9-E7-EA-C6-9F-4C-B5-51')
+GO
+
+INSERT INTO [dbo].[reset_student] ([id], [student_id], [reset_time], [token]) VALUES (N'5', N'6', N'2020-12-11 17:56:32.873', N'7CC43AB2A5BD8786689360CADFC6C080')
+GO
+
+INSERT INTO [dbo].[reset_student] ([id], [student_id], [reset_time], [token]) VALUES (N'6', N'6', N'2020-12-11 18:03:49.123', N'888414057C57D9C295566F810F1214F1')
+GO
+
+INSERT INTO [dbo].[reset_student] ([id], [student_id], [reset_time], [token]) VALUES (N'7', N'6', N'2020-12-11 18:07:26.573', N'DBF8E60BD721FEDAD75D475B61478C31')
+GO
+
+SET IDENTITY_INSERT [dbo].[reset_student] OFF
+GO
+
+
+-- ----------------------------
+-- Auto increment value for reset_student
+-- ----------------------------
+DBCC CHECKIDENT ('[dbo].[reset_student]', RESEED, 7)
+GO
+
